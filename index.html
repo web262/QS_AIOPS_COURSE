@@ -3,210 +3,1271 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>14-Week AI Engineer AIOps, MLOps & LLMOps Track | Become Production-Ready in GenAI & Agentic AI</title>
-  <meta name="description" content="A 14-week professional AI Engineer course that helps learners build, deploy, monitor and operate GenAI and Agentic AI systems using AIOps, MLOps, DevOps and LLMOps practices." />
+  <title>14-Week AI Engineer AIOps, MLOps & LLMOps Track | Deploy GenAI & Agentic AI at Scale</title>
+  <meta name="description" content="A 14-week AI Engineer course focused on AIOps, MLOps, DevOps, LLMOps, GenAI deployment and Agentic AI systems in production." />
+
   <style>
     :root{
-      --ink:#07142f; --muted:#5b6680; --blue:#0e5bff; --cyan:#09b6d8; --violet:#6d5cff; --orange:#ff8a00;
-      --bg:#f6f9ff; --card:#ffffff; --line:#dce6f7; --soft:#eef5ff; --dark:#06142f; --green:#11a36a;
-      --shadow:0 24px 70px rgba(13,41,91,.14); --radius:28px;
+      --ink:#07142f;
+      --ink-2:#102447;
+      --muted:#5f6f8c;
+      --muted-2:#7c8aa5;
+      --blue:#0e5bff;
+      --blue-2:#0a47d7;
+      --cyan:#09b6d8;
+      --violet:#6d5cff;
+      --orange:#ff8a00;
+      --green:#12a874;
+      --bg:#f5f8ff;
+      --surface:#ffffff;
+      --surface-soft:#f8fbff;
+      --line:#dbe7f8;
+      --line-strong:#c8d9f2;
+      --dark:#06142f;
+      --dark-2:#0b2a63;
+      --shadow-xs:0 8px 22px rgba(13,41,91,.06);
+      --shadow-sm:0 14px 38px rgba(13,41,91,.08);
+      --shadow-md:0 22px 60px rgba(13,41,91,.12);
+      --shadow-dark:0 30px 80px rgba(7,20,47,.30);
+      --radius-sm:16px;
+      --radius-md:22px;
+      --radius-lg:30px;
+      --radius-xl:40px;
+      --max:1180px;
     }
+
     *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:linear-gradient(180deg,#f8fbff 0%,#eef5ff 45%,#f9fbff 100%);color:var(--ink);}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(14,91,255,.13), transparent 34rem),
+        radial-gradient(circle at 3% 28rem, rgba(255,138,0,.13), transparent 28rem),
+        linear-gradient(180deg,#f9fcff 0%,#eef5ff 45%,#f9fbff 100%);
+      color:var(--ink);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
     a{color:inherit;text-decoration:none}
-    .page{overflow:hidden;position:relative}
-    .bg-grid{position:fixed;inset:0;z-index:-2;background-image:linear-gradient(rgba(14,91,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(14,91,255,.06) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,black,transparent 80%);}
-    .glow{position:fixed;inset:auto;z-index:-1;filter:blur(40px);opacity:.55;pointer-events:none}
-    .glow.one{width:540px;height:540px;border-radius:50%;background:#b5dcff;right:-120px;top:80px}
-    .glow.two{width:420px;height:420px;border-radius:50%;background:#ffe2ad;left:-120px;top:480px}
-    .wrap{width:min(1180px,calc(100% - 40px));margin:0 auto}
-    header{position:sticky;top:0;z-index:10;background:rgba(248,251,255,.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(220,230,247,.72)}
-    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:22px}
-    .brand{display:flex;align-items:center;gap:18px;min-width:0;padding:11px 18px;border:1px solid rgba(204,221,247,.95);border-radius:999px;background:linear-gradient(180deg,#ffffff 0%,#fbfdff 100%);box-shadow:0 16px 44px rgba(13,41,91,.08)}
-    .brand-cluster{display:flex;align-items:center;gap:9px;white-space:nowrap}
-    .brand-mark{position:relative;display:inline-block;width:28px;height:30px;flex:0 0 28px}
-    .mark-piece{position:absolute;width:19px;height:19px;border-radius:5px;transform:rotate(30deg);box-shadow:0 8px 18px rgba(13,41,91,.10)}
-    .mark-blue{left:2px;top:1px;background:linear-gradient(135deg,#0b4be8,#2047b8)}
-    .mark-orange{right:1px;bottom:1px;background:linear-gradient(135deg,#ff9d16,#ff8a00)}
-    .word{font-weight:950;letter-spacing:-.05em;color:#111827;line-height:1}
-    .qv-word{font-size:23px}
-    .qs-word{font-size:27px}
-    .community-text{font-size:13px;font-weight:850;color:#2146af;margin-left:8px}
-    .mini-mark{position:relative;display:inline-block;width:20px;height:21px;margin-left:2px}
-    .mini-blue,.mini-orange{position:absolute;width:13px;height:13px;border-radius:4px;transform:rotate(30deg)}
-    .mini-blue{left:1px;top:1px;background:#1548d8}
-    .mini-orange{right:0;bottom:1px;background:#ff920d}
-    .mini-word{font-size:13px;font-weight:950;color:#111827;letter-spacing:-.03em}
-    .brand .sep{height:34px;width:1px;background:linear-gradient(180deg,rgba(14,91,255,.06),rgba(14,91,255,.36),rgba(14,91,255,.06))}
-    .navlinks{display:flex;align-items:center;gap:18px;font-size:14px;color:#30405f;font-weight:650}
-    .navlinks a{opacity:.86}
-    .navlinks a:hover{opacity:1;color:var(--blue)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid #cfe0fb;background:#fff;border-radius:999px;padding:12px 18px;font-weight:800;color:#0a1b3d;box-shadow:0 10px 26px rgba(14,91,255,.08);white-space:nowrap}
-    .btn.primary{background:linear-gradient(135deg,var(--blue),var(--violet));color:white;border-color:transparent;box-shadow:0 18px 35px rgba(14,91,255,.25)}
-    .hero{padding:74px 0 64px}
-    .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:46px;align-items:center}
-    .eyebrow{display:inline-flex;align-items:center;gap:10px;border:1px solid #cde0ff;background:rgba(255,255,255,.75);border-radius:999px;padding:9px 13px;color:#153a78;font-size:13px;font-weight:850;letter-spacing:.08em;text-transform:uppercase}
-    .dot{width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--cyan));box-shadow:0 0 0 5px rgba(14,91,255,.1)}
-    h1{font-size:clamp(34px,5vw,58px);line-height:1.03;letter-spacing:-.055em;margin:20px 0 16px;max-width:740px}
-    h1 .accent{background:linear-gradient(90deg,var(--blue),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
-    .hero-sub{font-size:clamp(17px,2vw,21px);line-height:1.6;color:#33415e;max-width:700px;margin:0 0 22px}
-    .pillbar{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 30px}
-    .pill{display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border-radius:999px;background:#fff;border:1px solid #dce8fb;color:#16315f;font-weight:800;font-size:13px;box-shadow:0 10px 30px rgba(13,41,91,.06)}
+    img,svg{max-width:100%}
+    p,h1,h2,h3,h4{overflow-wrap:anywhere}
+
+    .page{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .bg-grid{
+      position:fixed;
+      inset:0;
+      z-index:-2;
+      pointer-events:none;
+      background-image:
+        linear-gradient(rgba(14,91,255,.055) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(14,91,255,.055) 1px,transparent 1px);
+      background-size:42px 42px;
+      mask-image:linear-gradient(to bottom,black 0%,rgba(0,0,0,.78) 38%,transparent 88%);
+    }
+
+    .wrap{
+      width:min(var(--max),calc(100% - 40px));
+      margin-inline:auto;
+    }
+
+    .wrap.nav-wrap{
+      width:min(1480px,calc(100% - 56px));
+    }
+
+    /* Header */
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(248,251,255,.86);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(220,230,247,.78);
+    }
+
+    .nav{
+      min-height:90px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:26px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      min-width:0;
+    }
+
+    .brand-shot{
+      display:block;
+      height:68px;
+      width:auto;
+      max-width:min(520px,35vw);
+      object-fit:contain;
+      filter:drop-shadow(0 14px 28px rgba(13,41,91,.08));
+    }
+
+    .navlinks{
+      display:flex;
+      align-items:center;
+      gap:20px;
+      color:#314565;
+      font-size:14px;
+      font-weight:750;
+      white-space:nowrap;
+    }
+
+    .navlinks a{
+      opacity:.82;
+      transition:.2s ease;
+    }
+
+    .navlinks a:hover{
+      opacity:1;
+      color:var(--blue);
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:46px;
+      border:1px solid #cfe0fb;
+      background:#fff;
+      border-radius:999px;
+      padding:12px 18px;
+      color:#0a1b3d;
+      font-weight:900;
+      letter-spacing:-.01em;
+      box-shadow:var(--shadow-xs);
+      white-space:nowrap;
+      transition:.22s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+      box-shadow:var(--shadow-sm);
+    }
+
+    .btn.primary{
+      color:#fff;
+      border-color:transparent;
+      background:linear-gradient(135deg,var(--blue),var(--violet));
+      box-shadow:0 18px 36px rgba(14,91,255,.24);
+    }
+
+    .btn.dark{
+      color:#fff;
+      border-color:rgba(255,255,255,.18);
+      background:rgba(255,255,255,.12);
+      box-shadow:none;
+    }
+
+    /* General sections */
+    section{
+      padding:72px 0;
+      position:relative;
+    }
+
+    .section-head{
+      display:grid;
+      grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);
+      align-items:end;
+      gap:28px;
+      margin-bottom:30px;
+    }
+
+    .section-head.center{
+      display:block;
+      text-align:center;
+      max-width:820px;
+      margin-inline:auto;
+    }
+
+    .section-head h2{
+      margin:0;
+      max-width:850px;
+      font-size:clamp(28px,3.6vw,44px);
+      line-height:1.08;
+      letter-spacing:-.045em;
+      color:var(--ink);
+    }
+
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.65;
+      font-weight:650;
+      font-size:15px;
+    }
+
+    .section-head.center p{
+      margin:14px auto 0;
+      max-width:680px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      border:1px solid #cde0ff;
+      background:rgba(255,255,255,.82);
+      border-radius:999px;
+      padding:9px 13px;
+      color:#153a78;
+      font-size:12px;
+      font-weight:950;
+      letter-spacing:.09em;
+      text-transform:uppercase;
+      box-shadow:var(--shadow-xs);
+    }
+
+    .dot{
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:linear-gradient(135deg,var(--blue),var(--cyan));
+      box-shadow:0 0 0 5px rgba(14,91,255,.10);
+      flex:0 0 auto;
+    }
+
+    .pillbar{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:24px 0 0;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      min-height:36px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid #dce8fb;
+      color:#16315f;
+      font-weight:850;
+      font-size:13px;
+      box-shadow:0 10px 26px rgba(13,41,91,.055);
+    }
+
     .pill strong{color:var(--blue)}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
-    .mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px;max-width:680px}
-    .stat{background:rgba(255,255,255,.72);border:1px solid var(--line);border-radius:20px;padding:16px 18px;box-shadow:0 14px 40px rgba(13,41,91,.07)}
-    .stat b{font-size:26px;display:block;letter-spacing:-.03em}
-    .stat span{font-size:13px;color:var(--muted);font-weight:700}
-    .hero-card{position:relative;min-height:570px;perspective:1200px}
-    .system-board{position:absolute;inset:22px 0 0 18px;background:linear-gradient(145deg,#071839,#0b2553 54%,#051229);color:white;border-radius:34px;box-shadow:0 32px 80px rgba(7,20,47,.35);padding:26px;border:1px solid rgba(255,255,255,.14);overflow:hidden;transform:rotateX(4deg) rotateY(-8deg);}
-    .system-board:before{content:"";position:absolute;inset:-80px -60px auto auto;width:270px;height:270px;border-radius:50%;background:radial-gradient(circle,rgba(9,182,216,.42),transparent 67%);}
-    .board-title{display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:900;margin-bottom:20px}
-    .board-title .tag{font-size:12px;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 10px;color:#b9d4ff;background:rgba(255,255,255,.07)}
-    .pipeline{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:18px}
-    .pipe-step{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:14px 10px;text-align:center;min-height:98px}
-    .svgicon{width:30px;height:30px;display:inline-block;color:#60a5ff}
-    .pipe-step:nth-child(3) .svgicon{color:#4ee5d1}
-    .pipe-step:nth-child(5) .svgicon{color:#ffb547}
-    .pipe-step b{display:block;font-size:13px;margin-top:7px}
-    .pipe-step span{font-size:11px;color:#a8bddc}
-    .screen{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .panel{background:rgba(255,255,255,.085);border:1px solid rgba(255,255,255,.13);border-radius:22px;padding:18px;min-height:170px}
-    .panel h4{margin:0 0 12px;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#cfe3ff}
-    .metric{display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.1);padding:8px 0;font-size:13px;color:#dbe9ff}
+
+    /* Shared clean cards */
+    .clean-card{
+      background:rgba(255,255,255,.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius-lg);
+      box-shadow:var(--shadow-sm);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .clean-card:hover{
+      border-color:#c8dbf6;
+      box-shadow:var(--shadow-md);
+    }
+
+    .iconbox{
+      width:50px;
+      height:50px;
+      border-radius:17px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg,#eef6ff,#fff);
+      border:1px solid #dbe8fb;
+      color:var(--blue);
+      flex:0 0 auto;
+    }
+
+    .svgicon{
+      width:28px;
+      height:28px;
+      display:inline-block;
+      color:currentColor;
+    }
+
+    /* Hero */
+    .hero{
+      padding:78px 0 70px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.02fr) minmax(420px,.98fr);
+      gap:48px;
+      align-items:center;
+    }
+
+    h1{
+      margin:20px 0 16px;
+      max-width:760px;
+      font-size:clamp(38px,5vw,62px);
+      line-height:1.02;
+      letter-spacing:-.058em;
+    }
+
+    h1 .accent{
+      background:linear-gradient(90deg,var(--blue),var(--violet));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .hero-sub{
+      margin:0;
+      max-width:720px;
+      color:#33415e;
+      font-size:clamp(17px,2vw,21px);
+      line-height:1.62;
+      font-weight:520;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:26px;
+    }
+
+    .mini-stats{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+      margin-top:34px;
+      max-width:700px;
+    }
+
+    .stat{
+      padding:18px;
+      border-radius:22px;
+      background:rgba(255,255,255,.86);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-xs);
+      min-height:116px;
+    }
+
+    .stat b{
+      display:block;
+      margin-bottom:7px;
+      color:var(--ink);
+      font-size:30px;
+      line-height:1;
+      letter-spacing:-.04em;
+    }
+
+    .stat span{
+      display:block;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.45;
+      font-weight:760;
+    }
+
+    .hero-card{
+      position:relative;
+      isolation:isolate;
+    }
+
+    .system-board{
+      border-radius:36px;
+      padding:26px;
+      color:#fff;
+      background:
+        radial-gradient(circle at 88% 12%,rgba(9,182,216,.34),transparent 18rem),
+        linear-gradient(145deg,#071839,#0b2553 54%,#051229);
+      border:1px solid rgba(255,255,255,.15);
+      box-shadow:var(--shadow-dark);
+      overflow:hidden;
+    }
+
+    .board-title{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      margin-bottom:18px;
+      font-weight:950;
+      letter-spacing:-.02em;
+    }
+
+    .board-title .tag{
+      flex:0 0 auto;
+      font-size:11px;
+      color:#c9ddff;
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:999px;
+      padding:7px 10px;
+      background:rgba(255,255,255,.075);
+    }
+
+    .pipeline{
+      display:grid;
+      grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:10px;
+      margin-bottom:14px;
+    }
+
+    .pipe-step{
+      min-height:112px;
+      padding:14px 10px;
+      text-align:center;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,.13);
+      background:rgba(255,255,255,.085);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .pipe-step svg{color:#64a9ff}
+    .pipe-step:nth-child(3) svg{color:#4ee5d1}
+    .pipe-step:nth-child(5) svg{color:#ffb547}
+
+    .pipe-step b{
+      display:block;
+      margin-top:8px;
+      font-size:13px;
+      line-height:1.2;
+    }
+
+    .pipe-step span{
+      display:block;
+      margin-top:4px;
+      color:#aec4e4;
+      font-size:11px;
+      line-height:1.25;
+      font-weight:650;
+    }
+
+    .screen{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+      margin-top:14px;
+    }
+
+    .panel{
+      min-height:176px;
+      padding:18px;
+      border-radius:24px;
+      border:1px solid rgba(255,255,255,.13);
+      background:rgba(255,255,255,.085);
+    }
+
+    .panel h4{
+      margin:0 0 10px;
+      color:#cfe3ff;
+      font-size:12px;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+    }
+
+    .metric{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      padding:9px 0;
+      color:#dbe9ff;
+      font-size:13px;
+      line-height:1.2;
+    }
+
+    .metric:last-child{border-bottom:0}
     .metric strong{color:#55e7b4}
-    .agent-layer{position:absolute;left:-8px;bottom:8px;width:320px;background:#fff;color:var(--ink);border:1px solid #dbe6f7;border-radius:28px;padding:20px;box-shadow:var(--shadow)}
-    .agent-layer h3{margin:0 0 12px;font-size:18px;letter-spacing:-.03em}
-    .agent-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-    .agent-chip{font-size:12px;font-weight:800;border:1px solid #deebfc;background:#f7fbff;border-radius:12px;padding:8px 9px;color:#23446f}
-    .floating-card{position:absolute;right:0;bottom:42px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:18px;width:245px;box-shadow:var(--shadow)}
-    .floating-card b{display:block;font-size:26px;color:var(--blue);line-height:1}
-    .floating-card span{font-size:13px;color:#566579;font-weight:750}
 
-    .outcome-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:20px;margin-top:10px}
-    .outcome-panel{background:rgba(255,255,255,.86);border:1px solid var(--line);border-radius:30px;padding:28px;box-shadow:var(--shadow);position:relative;overflow:hidden}
-    .outcome-panel:before{content:"";position:absolute;right:-80px;top:-80px;width:210px;height:210px;border-radius:50%;background:radial-gradient(circle,rgba(14,91,255,.12),transparent 68%)}
-    .outcome-panel h3{margin:0 0 14px;font-size:27px;letter-spacing:-.035em}
-    .outcome-panel p{margin:0 0 18px;color:#5b6680;line-height:1.65;font-weight:600}
-    .outcome-list{display:grid;gap:12px;position:relative;z-index:1}
-    .outcome-item{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;padding:14px;border:1px solid #dce8fb;border-radius:18px;background:linear-gradient(180deg,#ffffff,#f8fbff)}
-    .outcome-item b{width:34px;height:34px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff;display:grid;place-items:center;font-size:13px}
-    .outcome-item strong{display:block;color:#0b1d42;font-size:15px;margin-bottom:3px}
-    .outcome-item span{display:block;color:#5d6a82;font-size:13px;line-height:1.45}
-    .role-cards{display:grid;gap:12px}
-    .role-card{border:1px solid #dce8fb;background:#fff;border-radius:20px;padding:18px;box-shadow:0 12px 32px rgba(13,41,91,.06)}
-    .role-card h4{margin:0 0 7px;font-size:17px;letter-spacing:-.02em;color:#0b1d42}
-    .role-card p{margin:0;color:#5d6a82;font-size:13px;line-height:1.52}
+    .hero-bottom-cards{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:14px;
+      margin-top:14px;
+    }
 
-    section{padding:66px 0}
-    .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:26px;margin-bottom:28px}
-    .section-head h2{font-size:clamp(28px,3.6vw,43px);line-height:1.08;margin:0;letter-spacing:-.045em;max-width:820px}
-    .section-head p{margin:0;color:#5b6680;line-height:1.65;max-width:430px;font-weight:600}
-    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-    .card{background:rgba(255,255,255,.82);border:1px solid var(--line);border-radius:26px;padding:24px;box-shadow:0 16px 48px rgba(13,41,91,.07)}
-    .card h3{margin:14px 0 8px;font-size:19px;letter-spacing:-.02em}
-    .card p{margin:0;color:#5d6a82;line-height:1.55;font-size:14px}
-    .iconbox{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,#eef6ff,#fff);border:1px solid #dbe8fb;color:var(--blue)}
-    .dark-band{background:linear-gradient(135deg,#07142f,#0b2a63);color:white;border-radius:42px;padding:46px;box-shadow:0 34px 80px rgba(7,20,47,.22);position:relative;overflow:hidden}
-    .dark-band:after{content:"";position:absolute;right:-120px;top:-120px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(9,182,216,.35),transparent 67%)}
-    .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:28px;position:relative;z-index:1}
-    .flow-step{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);border-radius:22px;padding:20px;min-height:160px}
-    .flow-step b{font-size:28px;color:#7dc4ff}
-    .flow-step h3{margin:14px 0 8px;font-size:17px}
-    .flow-step p{margin:0;color:#b7c9e6;font-size:13px;line-height:1.55}
-    .curriculum{display:grid;grid-template-columns:360px 1fr;gap:24px;align-items:start}
-    .sticky-note{position:sticky;top:104px;background:#fff;border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:var(--shadow)}
-    .sticky-note h3{margin:0 0 10px;font-size:25px;letter-spacing:-.03em}
-    .sticky-note p{color:#5d6a82;line-height:1.65;margin:0 0 18px}
-    .legend{display:grid;gap:10px}
-    .legend span{display:flex;align-items:center;gap:10px;color:#33415e;font-weight:750;font-size:14px}
-    .legend i{width:10px;height:10px;border-radius:50%;display:inline-block;background:var(--blue)}
+    .agent-layer,
+    .floating-card{
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-sm);
+    }
+
+    .agent-layer{
+      border-radius:28px;
+      padding:20px;
+    }
+
+    .agent-layer h3{
+      margin:0 0 12px;
+      font-size:18px;
+      letter-spacing:-.03em;
+    }
+
+    .agent-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:8px;
+    }
+
+    .agent-chip{
+      min-height:34px;
+      display:flex;
+      align-items:center;
+      border:1px solid #deebfc;
+      background:#f7fbff;
+      border-radius:12px;
+      padding:8px 9px;
+      color:#23446f;
+      font-size:12px;
+      font-weight:860;
+      line-height:1.15;
+    }
+
+    .floating-card{
+      border-radius:28px;
+      padding:22px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .floating-card b{
+      display:block;
+      color:var(--blue);
+      font-size:28px;
+      line-height:1.02;
+      letter-spacing:-.045em;
+    }
+
+    .floating-card span{
+      display:block;
+      margin-top:8px;
+      color:#566579;
+      font-size:13px;
+      line-height:1.45;
+      font-weight:780;
+    }
+
+    /* Overview boxes */
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:18px;
+      align-items:stretch;
+    }
+
+    .card{
+      min-height:248px;
+      padding:24px;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .card h3{
+      margin:16px 0 9px;
+      font-size:19px;
+      line-height:1.22;
+      letter-spacing:-.025em;
+    }
+
+    .card p{
+      margin:0;
+      color:#5d6a82;
+      line-height:1.58;
+      font-size:14px;
+      font-weight:560;
+    }
+
+    /* Outcomes */
+    .outcomes-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
+      gap:22px;
+      align-items:stretch;
+    }
+
+    .outcome-panel{
+      padding:30px;
+    }
+
+    .outcome-panel h3{
+      margin:0 0 12px;
+      font-size:28px;
+      line-height:1.12;
+      letter-spacing:-.04em;
+    }
+
+    .outcome-panel > p{
+      margin:0 0 20px;
+      color:var(--muted);
+      line-height:1.65;
+      font-weight:650;
+    }
+
+    .outcome-list{
+      display:grid;
+      gap:12px;
+    }
+
+    .outcome-item,
+    .req-item{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      border:1px solid #deebfc;
+      background:#f8fbff;
+      border-radius:18px;
+      padding:15px;
+    }
+
+    .outcome-num,
+    .req-num{
+      flex:0 0 auto;
+      width:32px;
+      height:32px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg,var(--blue),var(--violet));
+      color:#fff;
+      font-size:12px;
+      font-weight:950;
+      line-height:1;
+    }
+
+    .outcome-item strong,
+    .req-item strong{
+      display:block;
+      color:#0c2550;
+      font-size:15px;
+      line-height:1.28;
+      margin-bottom:5px;
+    }
+
+    .outcome-item span,
+    .req-item span{
+      display:block;
+      color:#5d6a82;
+      font-size:13px;
+      line-height:1.45;
+      font-weight:650;
+    }
+
+    .role-cards{
+      display:grid;
+      gap:12px;
+    }
+
+    .role-card{
+      min-height:118px;
+      padding:18px;
+      border-radius:20px;
+      border:1px solid #deebfc;
+      background:linear-gradient(180deg,#fff,#f8fbff);
+      box-shadow:0 10px 28px rgba(13,41,91,.055);
+    }
+
+    .role-card h4{
+      margin:0 0 7px;
+      color:#0c2550;
+      font-size:16px;
+      line-height:1.25;
+      letter-spacing:-.02em;
+    }
+
+    .role-card p{
+      margin:0;
+      color:#5d6a82;
+      font-size:13px;
+      line-height:1.48;
+      font-weight:650;
+    }
+
+    /* Requirements */
+    .requirements{
+      display:grid;
+      grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+      gap:22px;
+      align-items:stretch;
+    }
+
+    .req-card{
+      padding:30px;
+    }
+
+    .req-card.highlight{
+      color:#fff;
+      border-color:rgba(255,255,255,.14);
+      background:
+        radial-gradient(circle at 90% 10%,rgba(9,182,216,.34),transparent 15rem),
+        linear-gradient(135deg,#07142f,#0b2a63);
+    }
+
+    .req-card h3{
+      margin:0 0 12px;
+      font-size:25px;
+      line-height:1.15;
+      letter-spacing:-.035em;
+    }
+
+    .req-card > p{
+      margin:0;
+      color:#5d6a82;
+      line-height:1.65;
+      font-weight:650;
+    }
+
+    .req-card.highlight > p{
+      color:#c5d7f2;
+    }
+
+    .req-list{
+      display:grid;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .req-note{
+      position:relative;
+      z-index:1;
+      margin-top:16px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.08);
+      border-radius:20px;
+      padding:17px;
+      color:#d7e5fb;
+      line-height:1.55;
+      font-weight:650;
+    }
+
+    .req-note b{
+      display:block;
+      margin-bottom:6px;
+      color:#fff;
+    }
+
+    /* Flow */
+    .dark-band{
+      color:#fff;
+      border-radius:var(--radius-xl);
+      padding:46px;
+      background:
+        radial-gradient(circle at top right,rgba(9,182,216,.35),transparent 19rem),
+        linear-gradient(135deg,#07142f,#0b2a63);
+      box-shadow:0 34px 80px rgba(7,20,47,.22);
+      overflow:hidden;
+    }
+
+    .dark-band .section-head h2{color:#fff}
+    .dark-band .section-head p{color:#c5d7f2}
+
+    .flow{
+      display:grid;
+      grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:14px;
+      margin-top:28px;
+    }
+
+    .flow-step{
+      min-height:170px;
+      border-radius:24px;
+      padding:22px 20px;
+      background:rgba(255,255,255,.085);
+      border:1px solid rgba(255,255,255,.14);
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+    }
+
+    .flow-step b{
+      color:#7dc4ff;
+      font-size:30px;
+      line-height:1;
+      letter-spacing:-.05em;
+    }
+
+    .flow-step h3{
+      margin:16px 0 8px;
+      font-size:18px;
+      line-height:1.2;
+      letter-spacing:-.02em;
+    }
+
+    .flow-step p{
+      margin:0;
+      color:#b7c9e6;
+      font-size:13px;
+      line-height:1.55;
+      font-weight:650;
+    }
+
+    /* Agent section */
+    .agent-section{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(420px,1.05fr);
+      gap:28px;
+      align-items:center;
+    }
+
+    .agent-text h2{
+      margin:18px 0 14px;
+      font-size:clamp(30px,4vw,46px);
+      letter-spacing:-.045em;
+      line-height:1.1;
+    }
+
+    .agent-text p{
+      margin:0;
+      color:#5d6a82;
+      line-height:1.7;
+      font-size:17px;
+      font-weight:560;
+    }
+
+    .agent-stack{
+      padding:28px;
+    }
+
+    .stack-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom:20px;
+    }
+
+    .stack-title h3{
+      margin:0;
+      font-size:26px;
+      line-height:1.15;
+      letter-spacing:-.035em;
+    }
+
+    .stack-title span{
+      flex:0 0 auto;
+      color:#fff;
+      background:linear-gradient(135deg,var(--blue),var(--violet));
+      border-radius:999px;
+      padding:8px 11px;
+      font-weight:950;
+      font-size:12px;
+      line-height:1;
+    }
+
+    .stack-list{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+    }
+
+    .stack-item{
+      min-height:56px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      border:1px solid #deebfc;
+      background:#f8fbff;
+      border-radius:16px;
+      padding:12px 13px;
+      color:#233a64;
+      font-weight:850;
+      font-size:14px;
+      line-height:1.25;
+    }
+
+    .stack-item .mini{
+      flex:0 0 auto;
+      width:30px;
+      height:30px;
+      border-radius:11px;
+      display:grid;
+      place-items:center;
+      color:var(--blue);
+      background:#fff;
+      border:1px solid #dce8fb;
+      font-size:12px;
+      font-weight:950;
+    }
+
+    /* Curriculum */
+    .curriculum{
+      display:grid;
+      grid-template-columns:340px minmax(0,1fr);
+      gap:24px;
+      align-items:start;
+    }
+
+    .sticky-note{
+      position:sticky;
+      top:112px;
+      padding:26px;
+    }
+
+    .sticky-note h3{
+      margin:0 0 10px;
+      font-size:26px;
+      line-height:1.15;
+      letter-spacing:-.035em;
+    }
+
+    .sticky-note p{
+      margin:0 0 18px;
+      color:#5d6a82;
+      line-height:1.65;
+      font-weight:650;
+    }
+
+    .legend{
+      display:grid;
+      gap:10px;
+    }
+
+    .legend span{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:#33415e;
+      font-weight:800;
+      font-size:14px;
+      line-height:1.3;
+    }
+
+    .legend i{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      display:inline-block;
+      background:var(--blue);
+      flex:0 0 auto;
+    }
+
     .legend span:nth-child(2) i{background:var(--violet)}
     .legend span:nth-child(3) i{background:var(--cyan)}
     .legend span:nth-child(4) i{background:var(--orange)}
-    .modules{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-    .module{background:#fff;border:1px solid var(--line);border-radius:24px;padding:20px;box-shadow:0 14px 42px rgba(13,41,91,.06);position:relative;overflow:hidden}
-    .module:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue),var(--cyan))}
-    .module .num{font-size:12px;font-weight:950;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
-    .module h3{font-size:18px;margin:8px 0 8px;letter-spacing:-.02em}
-    .module p{font-size:14px;color:#5f6c84;line-height:1.55;margin:0}
-    .module .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
-    .module .tags span{font-size:11px;font-weight:850;color:#23446f;background:#f1f7ff;border:1px solid #deebfc;border-radius:999px;padding:5px 8px}
-    .agent-section{display:grid;grid-template-columns:1fr 1.05fr;gap:24px;align-items:center}
-    .agent-stack{background:#fff;border:1px solid var(--line);border-radius:34px;padding:28px;box-shadow:var(--shadow)}
-    .stack-title{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:20px}
-    .stack-title h3{margin:0;font-size:26px;letter-spacing:-.03em}
-    .stack-title span{font-weight:900;font-size:12px;color:#fff;background:linear-gradient(135deg,var(--blue),var(--violet));border-radius:999px;padding:8px 11px}
-    .stack-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-    .stack-item{display:flex;align-items:center;gap:10px;border:1px solid #deebfc;background:#f8fbff;border-radius:16px;padding:12px 13px;color:#233a64;font-weight:850;font-size:14px}
-    .stack-item .mini{width:28px;height:28px;border-radius:10px;display:grid;place-items:center;background:#fff;border:1px solid #dce8fb;color:var(--blue)}
 
-    .requirements{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:stretch}
-    .req-card{background:rgba(255,255,255,.88);border:1px solid var(--line);border-radius:30px;padding:28px;box-shadow:0 18px 54px rgba(13,41,91,.07)}
-    .req-card.highlight{background:linear-gradient(135deg,#07142f,#0b2a63);color:white;border-color:rgba(255,255,255,.14);position:relative;overflow:hidden}
-    .req-card.highlight:after{content:"";position:absolute;right:-80px;top:-90px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(9,182,216,.32),transparent 66%)}
-    .req-card h3{margin:0 0 12px;font-size:24px;letter-spacing:-.03em}
-    .req-card p{margin:0;color:#5d6a82;line-height:1.65;font-weight:600}
-    .req-card.highlight p{color:#c5d7f2;position:relative;z-index:1}
-    .req-list{display:grid;gap:12px;margin-top:18px}
-    .req-item{display:flex;gap:12px;align-items:flex-start;background:#f8fbff;border:1px solid #deebfc;border-radius:18px;padding:14px 15px}
-    .req-item strong{display:block;color:#0c2550;font-size:15px;margin-bottom:3px}
-    .req-item span{color:#5d6a82;font-size:13px;line-height:1.45;font-weight:650}
-    .req-num{flex:0 0 auto;width:30px;height:30px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--violet));color:white;font-size:12px;font-weight:950}
-    .req-note{margin-top:16px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);border-radius:20px;padding:16px;position:relative;z-index:1}
-    .req-note b{display:block;margin-bottom:5px}
-
-    .projects{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
-    .project{background:#fff;border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:0 18px 54px rgba(13,41,91,.07)}
-    .project .label{font-size:12px;font-weight:950;color:var(--orange);letter-spacing:.1em;text-transform:uppercase}
-    .project h3{margin:12px 0 10px;font-size:20px;letter-spacing:-.025em}
-    .project p{margin:0;color:#5e6c84;line-height:1.55;font-size:14px}
-    .tools{display:flex;flex-wrap:wrap;gap:12px}
-    .tool{background:#fff;border:1px solid #dce8fb;border-radius:16px;padding:12px 14px;font-weight:850;color:#1a3765;box-shadow:0 10px 30px rgba(13,41,91,.05)}
-    .faq{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-    details{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px 20px;box-shadow:0 12px 36px rgba(13,41,91,.05)}
-    summary{cursor:pointer;font-weight:900;color:#112341}
-    details p{color:#5d6a82;line-height:1.6;margin:12px 0 0}
-    .cta{padding:28px 0 76px}
-    .cta-box{background:linear-gradient(135deg,#0e5bff,#6d5cff);color:white;border-radius:38px;padding:42px;display:flex;align-items:center;justify-content:space-between;gap:24px;box-shadow:0 28px 70px rgba(14,91,255,.28)}
-    .cta-box h2{margin:0 0 10px;font-size:36px;letter-spacing:-.04em}
-    .cta-box p{margin:0;color:#e4edff;max-width:680px;line-height:1.6}
-    footer{border-top:1px solid var(--line);padding:28px 0;color:#65728b;font-size:14px}
-    .footer-row{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    @media (max-width: 980px){
-      .navlinks{display:none}.hero-grid,.curriculum,.agent-section{grid-template-columns:1fr}.hero-card{min-height:620px}.cards,.projects{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:repeat(2,1fr)}.section-head{display:block}.section-head p{margin-top:12px}.sticky-note{position:relative;top:0}.modules{grid-template-columns:1fr}.cta-box{display:block}.cta-box .btn{margin-top:20px}
+    .modules{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px;
+      align-items:stretch;
     }
-    @media (max-width: 640px){
-      .wrap{width:min(100% - 24px,1180px)}.brand{padding:8px 11px;gap:10px}.community-text,.mini-mark,.mini-word,.brand .sep,.qs-cluster{display:none}.qv-word{font-size:21px}.brand-mark{width:25px;height:27px;flex-basis:25px}.hero{padding-top:42px}.mini-stats,.cards,.projects,.faq,.stack-list,.requirements{grid-template-columns:1fr}.hero-card{min-height:780px}.system-board{inset:0;transform:none}.pipeline{grid-template-columns:repeat(2,1fr)}.screen{grid-template-columns:1fr}.agent-layer,.floating-card{position:relative;width:auto;left:auto;right:auto;bottom:auto;margin-top:14px}.dark-band{padding:28px;border-radius:30px}.flow{grid-template-columns:1fr}.cta-box{padding:28px;border-radius:28px}h1{font-size:38px}
+
+    .module{
+      min-height:228px;
+      padding:20px 20px 18px 24px;
+      display:flex;
+      flex-direction:column;
+      border-radius:24px;
+    }
+
+    .module:before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:0;
+      bottom:0;
+      width:5px;
+      background:linear-gradient(180deg,var(--blue),var(--cyan));
+    }
+
+    .module .num{
+      color:var(--blue);
+      font-size:12px;
+      font-weight:950;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .module h3{
+      margin:8px 0 8px;
+      font-size:18px;
+      line-height:1.22;
+      letter-spacing:-.02em;
+    }
+
+    .module p{
+      margin:0;
+      color:#5f6c84;
+      font-size:14px;
+      line-height:1.55;
+      font-weight:560;
+    }
+
+    .module .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:7px;
+      margin-top:auto;
+      padding-top:14px;
+    }
+
+    .module .tags span{
+      color:#23446f;
+      background:#f1f7ff;
+      border:1px solid #deebfc;
+      border-radius:999px;
+      padding:5px 8px;
+      font-size:11px;
+      font-weight:900;
+      line-height:1.1;
+    }
+
+    /* Projects */
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:16px;
+      align-items:stretch;
+    }
+
+    .project{
+      min-height:250px;
+      padding:24px;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .project .label{
+      color:var(--orange);
+      font-size:12px;
+      font-weight:950;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+    }
+
+    .project h3{
+      margin:14px 0 10px;
+      font-size:20px;
+      line-height:1.18;
+      letter-spacing:-.025em;
+    }
+
+    .project p{
+      margin:0;
+      color:#5e6c84;
+      line-height:1.55;
+      font-size:14px;
+      font-weight:560;
+    }
+
+    /* Tools + FAQ */
+    .tools{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .tool{
+      display:inline-flex;
+      align-items:center;
+      min-height:42px;
+      border:1px solid #dce8fb;
+      background:#fff;
+      border-radius:16px;
+      padding:12px 14px;
+      color:#1a3765;
+      font-weight:850;
+      box-shadow:0 10px 26px rgba(13,41,91,.045);
+    }
+
+    .faq{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px;
+    }
+
+    details{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:18px 20px;
+      box-shadow:0 12px 34px rgba(13,41,91,.05);
+    }
+
+    summary{
+      cursor:pointer;
+      color:#112341;
+      font-weight:920;
+      line-height:1.35;
+    }
+
+    details p{
+      margin:12px 0 0;
+      color:#5d6a82;
+      line-height:1.6;
+      font-weight:590;
+    }
+
+    /* CTA + Footer */
+    .cta{
+      padding:32px 0 80px;
+    }
+
+    .cta-box{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:28px;
+      color:#fff;
+      border-radius:38px;
+      padding:42px;
+      background:
+        radial-gradient(circle at top right,rgba(255,255,255,.18),transparent 18rem),
+        linear-gradient(135deg,#0e5bff,#6d5cff);
+      box-shadow:0 28px 70px rgba(14,91,255,.28);
+    }
+
+    .cta-box h2{
+      margin:0 0 10px;
+      font-size:clamp(28px,4vw,38px);
+      line-height:1.08;
+      letter-spacing:-.045em;
+    }
+
+    .cta-box p{
+      margin:0;
+      max-width:720px;
+      color:#e4edff;
+      line-height:1.62;
+      font-weight:590;
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      padding:28px 0;
+      color:#65728b;
+      font-size:14px;
+    }
+
+    .footer-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+
+    /* Responsive */
+    @media (max-width:1220px){
+      .wrap.nav-wrap{width:min(100% - 44px,var(--max))}
+      .brand-shot{height:64px;max-width:min(500px,52vw)}
+      .navlinks{display:none}
+    }
+
+    @media (max-width:1040px){
+      .hero-grid,
+      .agent-section,
+      .outcomes-grid,
+      .requirements,
+      .curriculum{
+        grid-template-columns:1fr;
+      }
+
+      .section-head{
+        grid-template-columns:1fr;
+        align-items:start;
+      }
+
+      .section-head p{max-width:760px}
+      .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .projects{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .flow{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .sticky-note{position:relative;top:auto}
+    }
+
+    @media (max-width:760px){
+      .wrap,
+      .wrap.nav-wrap{width:min(100% - 24px,var(--max))}
+
+      section{padding:54px 0}
+      .nav{min-height:78px;gap:14px}
+      .brand-shot{height:auto;width:min(100%,420px);max-width:calc(100vw - 145px)}
+      .btn{min-height:42px;padding:10px 14px;font-size:13px}
+
+      .hero{padding:52px 0 58px}
+      h1{font-size:40px}
+      .hero-actions{flex-direction:column}
+      .hero-actions .btn{width:100%}
+
+      .mini-stats,
+      .cards,
+      .projects,
+      .faq,
+      .modules,
+      .stack-list,
+      .screen,
+      .hero-bottom-cards{
+        grid-template-columns:1fr;
+      }
+
+      .pipeline{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+
+      .system-board,
+      .dark-band,
+      .cta-box{
+        border-radius:28px;
+        padding:24px;
+      }
+
+      .board-title,
+      .stack-title,
+      .cta-box,
+      .footer-row{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .board-title .tag{
+        white-space:normal;
+      }
+
+      .flow{grid-template-columns:1fr}
+      .card,.module,.project,.flow-step{min-height:auto}
+      .outcome-panel,.req-card,.agent-stack,.sticky-note{padding:22px}
+    }
+
+    @media (max-width:460px){
+      .brand-shot{max-width:calc(100vw - 120px)}
+      .nav .btn.primary{padding-inline:12px;font-size:12px}
+      h1{font-size:36px}
+      .hero-sub{font-size:16px}
+      .pipeline{grid-template-columns:1fr}
+      .agent-grid{grid-template-columns:1fr}
+      .outcome-item,.req-item{padding:13px}
+      .iconbox{width:46px;height:46px}
     }
   </style>
 </head>
+
 <body>
 <div class="page">
-  <div class="bg-grid"></div><div class="glow one"></div><div class="glow two"></div>
-  <header>
-    <div class="wrap nav">
+  <div class="bg-grid" aria-hidden="true"></div>
 
-      <div class="brand brand-clean" aria-label="QuanVerse and QuanSkill branding">
-        <div class="brand-cluster qv-cluster">
-          <span class="brand-mark" aria-hidden="true">
-            <span class="mark-piece mark-blue"></span>
-            <span class="mark-piece mark-orange"></span>
-          </span>
-          <span class="word qv-word">QuanVerse</span>
-          <span class="community-text">A Community by</span>
-          <span class="mini-mark" aria-hidden="true">
-            <span class="mini-blue"></span>
-            <span class="mini-orange"></span>
-          </span>
-          <span class="mini-word">QuanSkill</span>
-        </div>
-        <span class="sep" aria-hidden="true"></span>
-        
-      </div>
-      <nav class="navlinks">
-        <a href="#overview">Overview</a><a href="#outcomes">Outcomes</a><a href="#prerequisites">Prerequisites</a><a href="#flow">Course Flow</a><a href="#agent-layer">Agentic Layer</a><a href="#curriculum">14 Weeks</a><a href="#projects">Projects</a>
+  <header>
+    <div class="wrap nav-wrap nav">
+      <a class="brand" href="#" aria-label="QuanVerse and QuanSkill branding">
+        <img class="brand-shot" src="data:image/png;base64,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" alt="QuanVerse — A Community by QuanSkill | Quanskill" />
+      </a>
+
+      <nav class="navlinks" aria-label="Primary navigation">
+        <a href="#outcomes">Outcomes</a>
+        <a href="#prerequisites">Prerequisites</a>
+        <a href="#flow">Course Flow</a>
+        <a href="#agent-layer-section">Agentic Layer</a>
+        <a href="#curriculum">14 Weeks</a>
+        <a href="#projects">Projects</a>
       </nav>
+
       <a class="btn primary" href="#enroll">Enroll Interest</a>
     </div>
   </header>
@@ -214,17 +1275,28 @@
   <main>
     <section class="hero">
       <div class="wrap hero-grid">
-        <div>
+        <div class="hero-copy">
           <div class="eyebrow"><span class="dot"></span>14-Week Production AI Course Track</div>
           <h1>AI Engineer <span class="accent">AIOps, MLOps & LLMOps Track</span></h1>
-          <p class="hero-sub">A 14-week professional course designed to help you become a production-ready AI engineer who can <b>build, deploy, monitor, troubleshoot and improve GenAI and Agentic AI systems</b> using AIOps, MLOps, DevOps and LLMOps workflows.</p>
+          <p class="hero-sub">
+            A 14-week professional course designed to help you become a production-ready AI engineer who can
+            <b>build, deploy, monitor, troubleshoot and improve GenAI and Agentic AI systems</b>
+            using AIOps, MLOps, DevOps and LLMOps workflows.
+          </p>
+
           <div class="pillbar">
-            <span class="pill"><strong>AIOps</strong> Observability</span><span class="pill"><strong>MLOps</strong> Model Lifecycle</span><span class="pill"><strong>LLMOps</strong> Evaluation & Guardrails</span><span class="pill"><strong>DevOps</strong> CI/CD & Cloud</span><span class="pill"><strong>Agentic AI</strong> Agents + Tools</span>
+            <span class="pill"><strong>AIOps</strong> Observability</span>
+            <span class="pill"><strong>MLOps</strong> Model Lifecycle</span>
+            <span class="pill"><strong>LLMOps</strong> Evaluation & Guardrails</span>
+            <span class="pill"><strong>DevOps</strong> CI/CD & Cloud</span>
+            <span class="pill"><strong>Agentic AI</strong> Agents + Tools</span>
           </div>
+
           <div class="hero-actions">
             <a class="btn primary" href="#curriculum">View Curriculum</a>
             <a class="btn" href="#projects">See Portfolio Projects</a>
           </div>
+
           <div class="mini-stats">
             <div class="stat"><b>14</b><span>weeks to production-ready AI skills</span></div>
             <div class="stat"><b>5</b><span>portfolio-grade engineering milestones</span></div>
@@ -234,26 +1306,75 @@
 
         <div class="hero-card" aria-label="Production AI operations visual">
           <div class="system-board">
-            <div class="board-title"><span>AI Production Control Plane</span><span class="tag">AIOps + MLOps + LLMOps</span></div>
+            <div class="board-title">
+              <span>AI Production Control Plane</span>
+              <span class="tag">AIOps + MLOps + LLMOps</span>
+            </div>
+
             <div class="pipeline">
-              <div class="pipe-step"><svg class="svgicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 17l-5-5 5-5"/><path d="M16 7l5 5-5 5"/><path d="M14 4l-4 16"/></svg><b>Build</b><span>GenAI app</span></div>
-              <div class="pipe-step"><svg class="svgicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7 12 12l8.7-5"/><path d="M12 22V12"/></svg><b>Package</b><span>Docker</span></div>
-              <div class="pipe-step"><svg class="svgicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 16V4"/><path d="M8 8l4-4 4 4"/><path d="M20 16.5A4.5 4.5 0 0 0 15.5 12h-1A6.5 6.5 0 1 0 8 20h11a3 3 0 0 0 1-5.83"/></svg><b>Deploy</b><span>Cloud/K8s</span></div>
-              <div class="pipe-step"><svg class="svgicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l3-3 3 2 5-7"/></svg><b>Observe</b><span>Logs & metrics</span></div>
-              <div class="pipe-step"><svg class="svgicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg><b>Improve</b><span>AIOps loop</span></div>
+              <div class="pipe-step">
+                <svg class="svgicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 17l-5-5 5-5"/><path d="M16 7l5 5-5 5"/><path d="M14 4l-4 16"/></svg>
+                <b>Build</b><span>GenAI app</span>
+              </div>
+              <div class="pipe-step">
+                <svg class="svgicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7 12 12l8.7-5"/><path d="M12 22V12"/></svg>
+                <b>Package</b><span>Docker</span>
+              </div>
+              <div class="pipe-step">
+                <svg class="svgicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 16V4"/><path d="M8 8l4-4 4 4"/><path d="M20 16.5A4.5 4.5 0 0 0 15.5 12h-1A6.5 6.5 0 1 0 8 20h11a3 3 0 0 0 1-5.83"/></svg>
+                <b>Deploy</b><span>Cloud/K8s</span>
+              </div>
+              <div class="pipe-step">
+                <svg class="svgicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l3-3 3 2 5-7"/></svg>
+                <b>Observe</b><span>Logs & metrics</span>
+              </div>
+              <div class="pipe-step">
+                <svg class="svgicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg>
+                <b>Improve</b><span>AIOps loop</span>
+              </div>
             </div>
+
             <div class="screen">
-              <div class="panel"><h4>Runtime Health</h4><div class="metric"><span>Latency p95</span><strong>320ms</strong></div><div class="metric"><span>Error Rate</span><strong>0.21%</strong></div><div class="metric"><span>Uptime</span><strong>99.9%</strong></div><div class="metric"><span>Token Cost</span><strong>Tracked</strong></div></div>
-              <div class="panel"><h4>Deployment Status</h4><div class="metric"><span>CI/CD</span><strong>Passed</strong></div><div class="metric"><span>Container</span><strong>Healthy</strong></div><div class="metric"><span>Model Version</span><strong>v2.3</strong></div><div class="metric"><span>Guardrails</span><strong>Active</strong></div></div>
+              <div class="panel">
+                <h4>Runtime Health</h4>
+                <div class="metric"><span>Latency p95</span><strong>320ms</strong></div>
+                <div class="metric"><span>Error Rate</span><strong>0.21%</strong></div>
+                <div class="metric"><span>Uptime</span><strong>99.9%</strong></div>
+                <div class="metric"><span>Token Cost</span><strong>Tracked</strong></div>
+              </div>
+
+              <div class="panel">
+                <h4>Deployment Status</h4>
+                <div class="metric"><span>CI/CD</span><strong>Passed</strong></div>
+                <div class="metric"><span>Container</span><strong>Healthy</strong></div>
+                <div class="metric"><span>Model Version</span><strong>v2.3</strong></div>
+                <div class="metric"><span>Guardrails</span><strong>Active</strong></div>
+              </div>
             </div>
           </div>
-          <div class="agent-layer">
-            <h3>AI Systems Engineering Layer</h3>
-            <div class="agent-grid">
-              <span class="agent-chip">Agents</span><span class="agent-chip">Memory</span><span class="agent-chip">MCP</span><span class="agent-chip">A2A</span><span class="agent-chip">Evals</span><span class="agent-chip">Guardrails</span><span class="agent-chip">Human Review</span><span class="agent-chip">Fallbacks</span><span class="agent-chip">Cost & Latency</span><span class="agent-chip">Agent Observability</span>
+
+          <div class="hero-bottom-cards">
+            <div class="agent-layer">
+              <h3>AI Systems Engineering Layer</h3>
+              <div class="agent-grid">
+                <span class="agent-chip">Agents</span>
+                <span class="agent-chip">Memory</span>
+                <span class="agent-chip">MCP</span>
+                <span class="agent-chip">A2A</span>
+                <span class="agent-chip">Evals</span>
+                <span class="agent-chip">Guardrails</span>
+                <span class="agent-chip">Human Review</span>
+                <span class="agent-chip">Fallbacks</span>
+                <span class="agent-chip">Cost & Latency</span>
+                <span class="agent-chip">Agent Observability</span>
+              </div>
+            </div>
+
+            <div class="floating-card">
+              <b>Scale-ready</b>
+              <span>from AI prototype to reliable production system</span>
             </div>
           </div>
-          <div class="floating-card"><b>Scale-ready</b><span>from AI prototype to reliable production system</span></div>
         </div>
       </div>
     </section>
@@ -264,14 +1385,33 @@
           <h2>A complete 14-week path for the production layer around AI.</h2>
           <p>Not only model training. Not only prompting. This 14-week track connects GenAI development with DevOps, MLOps, LLMOps and AIOps so learners understand how AI systems are shipped, observed and improved professionally.</p>
         </div>
+
         <div class="cards">
-          <div class="card"><div class="iconbox"><svg class="svgicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h5"/></svg></div><h3>Build AI Services</h3><p>Learn to create GenAI APIs, model services and agentic application backends with clean, maintainable project structure.</p></div>
-          <div class="card"><div class="iconbox"><svg class="svgicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12"/><path d="M7 8l5-5 5 5"/><path d="M5 21h14"/></svg></div><h3>Deploy with DevOps</h3><p>Become comfortable moving AI applications from local development to repeatable deployment workflows.</p></div>
-          <div class="card"><div class="iconbox"><svg class="svgicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 16l4-5 3 3 5-8"/></svg></div><h3>Operate with AIOps</h3><p>Develop the ability to observe AI systems, investigate issues and use AI to support faster troubleshooting.</p></div>
-          <div class="card"><div class="iconbox"><svg class="svgicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0 0-4 19"/><path d="M16 3.2A10 10 0 0 1 12 22"/><path d="M4 12h16"/></svg></div><h3>Engineer LLMOps</h3><p>Practice evaluation, guardrails, fallbacks and response quality checks for LLM and agentic applications.</p></div>
+          <article class="card clean-card">
+            <div class="iconbox"><svg class="svgicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h5"/></svg></div>
+            <h3>Build AI Services</h3>
+            <p>Learn to create GenAI APIs, model services and agentic application backends with clean, maintainable project structure.</p>
+          </article>
+
+          <article class="card clean-card">
+            <div class="iconbox"><svg class="svgicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12"/><path d="M7 8l5-5 5 5"/><path d="M5 21h14"/></svg></div>
+            <h3>Deploy with DevOps</h3>
+            <p>Become comfortable moving AI applications from local development to repeatable deployment workflows.</p>
+          </article>
+
+          <article class="card clean-card">
+            <div class="iconbox"><svg class="svgicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 16l4-5 3 3 5-8"/></svg></div>
+            <h3>Operate with AIOps</h3>
+            <p>Develop the ability to observe AI systems, investigate issues and use AI to support faster troubleshooting.</p>
+          </article>
+
+          <article class="card clean-card">
+            <div class="iconbox"><svg class="svgicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0 0-4 19"/><path d="M16 3.2A10 10 0 0 1 12 22"/><path d="M4 12h16"/></svg></div>
+            <h3>Engineer LLMOps</h3>
+            <p>Practice evaluation, guardrails, fallbacks and response quality checks for LLM and agentic applications.</p>
+          </article>
         </div>
       </div>
-
     </section>
 
     <section id="outcomes">
@@ -280,22 +1420,26 @@
           <h2>What learners can do after the program.</h2>
           <p>The course is written around professional capability, not only theory. Every module helps learners move closer to building and operating AI systems in real production-style environments.</p>
         </div>
-        <div class="outcome-grid">
-          <div class="outcome-panel">
+
+        <div class="outcomes-grid">
+          <article class="outcome-panel clean-card">
             <h3>Practical capabilities learners build</h3>
             <p>By the end of the 14 weeks, learners should be able to explain, build and operate the main production layers around modern AI applications.</p>
+
             <div class="outcome-list">
-              <div class="outcome-item"><b>01</b><div><strong>Build production-style GenAI applications</strong><span>Create API-based AI services, integrate LLMs, structure projects professionally and prepare applications for real usage.</span></div></div>
-              <div class="outcome-item"><b>02</b><div><strong>Deploy with DevOps discipline</strong><span>Use GitHub, CI/CD, Docker, Kubernetes and cloud workflows to move AI applications beyond local development.</span></div></div>
-              <div class="outcome-item"><b>03</b><div><strong>Apply MLOps and LLMOps workflows</strong><span>Version models, prompts and artifacts, evaluate outputs, manage RAG pipelines and control changes across releases.</span></div></div>
-              <div class="outcome-item"><b>04</b><div><strong>Operate systems with AIOps thinking</strong><span>Monitor logs, metrics, traces, latency, cost, incidents and runtime health using AI-assisted troubleshooting methods.</span></div></div>
-              <div class="outcome-item"><b>05</b><div><strong>Engineer safer agentic AI systems</strong><span>Work with agents, memory, MCP, A2A concepts, evals, guardrails, human review, fallbacks and agent observability.</span></div></div>
-              <div class="outcome-item"><b>06</b><div><strong>Improve AI products continuously</strong><span>Identify bottlenecks, debug failures, optimize performance and create a feedback loop for better reliability and user experience.</span></div></div>
+              <div class="outcome-item"><div class="outcome-num">01</div><div><strong>Build production-style GenAI applications</strong><span>Create API-based AI services, integrate LLMs, structure projects professionally and prepare applications for real usage.</span></div></div>
+              <div class="outcome-item"><div class="outcome-num">02</div><div><strong>Deploy with DevOps discipline</strong><span>Use GitHub, CI/CD, Docker, Kubernetes and cloud workflows to move AI applications beyond local development.</span></div></div>
+              <div class="outcome-item"><div class="outcome-num">03</div><div><strong>Apply MLOps and LLMOps workflows</strong><span>Version models, prompts and artifacts, evaluate outputs, manage RAG pipelines and control changes across releases.</span></div></div>
+              <div class="outcome-item"><div class="outcome-num">04</div><div><strong>Operate systems with AIOps thinking</strong><span>Monitor logs, metrics, traces, latency, cost, incidents and runtime health using AI-assisted troubleshooting methods.</span></div></div>
+              <div class="outcome-item"><div class="outcome-num">05</div><div><strong>Engineer safer agentic AI systems</strong><span>Work with agents, memory, MCP, A2A concepts, evals, guardrails, human review, fallbacks and agent observability.</span></div></div>
+              <div class="outcome-item"><div class="outcome-num">06</div><div><strong>Improve AI products continuously</strong><span>Identify bottlenecks, debug failures, optimize performance and create a feedback loop for better reliability and user experience.</span></div></div>
             </div>
-          </div>
-          <div class="outcome-panel">
+          </article>
+
+          <article class="outcome-panel clean-card">
             <h3>What they become professionally</h3>
             <p>This track helps learners grow from “AI app builder” toward production-minded AI engineering roles.</p>
+
             <div class="role-cards">
               <div class="role-card"><h4>Production-Ready AI Engineer</h4><p>A builder who can create AI applications and understand how they are deployed, monitored and maintained after launch.</p></div>
               <div class="role-card"><h4>MLOps / LLMOps Practitioner</h4><p>A technical profile capable of supporting model lifecycle, prompt/version control, RAG evaluation and release workflows.</p></div>
@@ -303,52 +1447,57 @@
               <div class="role-card"><h4>Agentic AI Systems Builder</h4><p>A learner who understands how agents, tools, memory, guardrails and observability fit into modern AI product architecture.</p></div>
               <div class="role-card"><h4>AI Product Engineering Contributor</h4><p>A team-ready contributor who can participate in building AI products that are not only impressive demos, but usable systems.</p></div>
             </div>
-          </div>
+          </article>
         </div>
       </div>
+    </section>
 
-
-    
     <section id="prerequisites">
       <div class="wrap">
         <div class="section-head">
           <h2>Prerequisites for the 14-week program.</h2>
           <p>This course is designed to build the production AI workflow step by step. You do not need to be a DevOps expert before joining, but you should be comfortable with basic software development concepts.</p>
         </div>
+
         <div class="requirements">
-          <div class="req-card">
+          <article class="req-card clean-card">
             <h3>Recommended starting knowledge</h3>
             <p>Learners should be ready to write, run, modify and debug simple applications before moving into AIOps, MLOps, DevOps and LLMOps workflows.</p>
+
             <div class="req-list">
               <div class="req-item"><div class="req-num">01</div><div><strong>Basic programming knowledge</strong><span>Preferably Python or JavaScript, including functions, packages, simple scripts and application logic.</span></div></div>
               <div class="req-item"><div class="req-num">02</div><div><strong>Basic Git and GitHub</strong><span>Comfort with repositories, commits, branches and pushing code to GitHub.</span></div></div>
               <div class="req-item"><div class="req-num">03</div><div><strong>Basic API or web app understanding</strong><span>Familiarity with how a simple frontend, backend, API request or web service works.</span></div></div>
               <div class="req-item"><div class="req-num">04</div><div><strong>Terminal and Linux command comfort</strong><span>Ability to use common commands for navigation, running scripts, checking files and reading simple logs.</span></div></div>
             </div>
-          </div>
-          <div class="req-card highlight">
+          </article>
+
+          <article class="req-card clean-card highlight">
             <h3>Cloud and DevOps experience is helpful, not mandatory</h3>
             <p>Prior exposure to cloud platforms, Docker, CI/CD, Kubernetes or monitoring tools will help, but it is not required. The course introduces these concepts progressively through realistic production AI use cases.</p>
+
             <div class="req-note">
               <b>How the course supports learners</b>
               <span>The 14-week flow starts with AI application foundations, then gradually adds GitHub, Linux, APIs, containers, CI/CD, cloud deployment, Kubernetes, MLOps, LLMOps, agentic AI controls and AIOps observability.</span>
             </div>
+
             <div class="req-note">
               <b>Best fit</b>
               <span>AI engineers, developers, data practitioners, automation builders and learners who want to move from AI demos to production-ready AI systems.</span>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-<section id="flow">
+    <section id="flow">
       <div class="wrap">
         <div class="dark-band">
-          <div class="section-head" style="position:relative;z-index:1;margin-bottom:8px">
+          <div class="section-head">
             <h2>Course flow: from AI idea to production operations.</h2>
-            <p style="color:#c5d7f2">The flow stays realistic: first build and package the AI system, then deploy it, observe it, improve it and finally add agentic production controls.</p>
+            <p>The flow stays realistic: first build and package the AI system, then deploy it, observe it, improve it and finally add agentic production controls.</p>
           </div>
+
           <div class="flow">
             <div class="flow-step"><b>01</b><h3>Build</h3><p>GenAI apps, APIs, model services and agent prototypes.</p></div>
             <div class="flow-step"><b>02</b><h3>Automate</h3><p>GitHub, CI/CD, testing, container builds and release flow.</p></div>
@@ -360,16 +1509,27 @@
       </div>
     </section>
 
-    <section id="agent-layer">
+    <section id="agent-layer-section">
       <div class="wrap agent-section">
-        <div>
+        <div class="agent-text">
           <div class="eyebrow"><span class="dot"></span>Realistic Agentic AI Production Layer</div>
-          <h2 style="font-size:clamp(30px,4vw,46px);letter-spacing:-.045em;line-height:1.1;margin:18px 0 14px">Agentic AI is added after learners understand the deployment base.</h2>
-          <p style="color:#5d6a82;line-height:1.7;font-size:17px;margin:0">The course does not randomly throw advanced agent terms at learners. It builds the foundation first: APIs, deployment, CI/CD, monitoring and model serving. Then the advanced Agentic Systems Engineering layer is introduced as the new production layer around the model.</p>
-          <div class="pillbar"><span class="pill"><strong>LLMOps</strong> evals</span><span class="pill"><strong>AIOps</strong> observability</span><span class="pill"><strong>Agentic AI</strong> tool use</span><span class="pill"><strong>DevOps</strong> runtime reliability</span></div>
+          <h2>Agentic AI is added after learners understand the deployment base.</h2>
+          <p>The course does not randomly throw advanced agent terms at learners. It builds the foundation first: APIs, deployment, CI/CD, monitoring and model serving. Then the advanced Agentic Systems Engineering layer is introduced as the new production layer around the model.</p>
+
+          <div class="pillbar">
+            <span class="pill"><strong>LLMOps</strong> evals</span>
+            <span class="pill"><strong>AIOps</strong> observability</span>
+            <span class="pill"><strong>Agentic AI</strong> tool use</span>
+            <span class="pill"><strong>DevOps</strong> runtime reliability</span>
+          </div>
         </div>
-        <div class="agent-stack">
-          <div class="stack-title"><h3>Production controls around agents</h3><span>Advanced Layer</span></div>
+
+        <article class="agent-stack clean-card">
+          <div class="stack-title">
+            <h3>Production controls around agents</h3>
+            <span>Advanced Layer</span>
+          </div>
+
           <div class="stack-list">
             <div class="stack-item"><span class="mini">A</span>Agents & Tools</div>
             <div class="stack-item"><span class="mini">M</span>Memory Systems</div>
@@ -382,67 +1542,120 @@
             <div class="stack-item"><span class="mini">C</span>Cost & Latency</div>
             <div class="stack-item"><span class="mini">F</span>Fallbacks</div>
           </div>
-        </div>
+        </article>
       </div>
     </section>
 
     <section id="curriculum">
       <div class="wrap curriculum">
-        <aside class="sticky-note">
+        <aside class="sticky-note clean-card">
           <h3>14-week course program</h3>
           <p>A realistic weekly flow from AI application foundations to production deployment, AIOps observability, MLOps lifecycle management, LLMOps controls and Agentic AI operations.</p>
-          <div class="legend"><span><i></i>AIOps & Observability</span><span><i></i>MLOps Lifecycle</span><span><i></i>LLMOps & Agents</span><span><i></i>DevOps & Cloud</span></div>
+
+          <div class="legend">
+            <span><i></i>AIOps & Observability</span>
+            <span><i></i>MLOps Lifecycle</span>
+            <span><i></i>LLMOps & Agents</span>
+            <span><i></i>DevOps & Cloud</span>
+          </div>
         </aside>
+
         <div class="modules">
-          <div class="module"><div class="num">Week 01</div><h3>Production AI Mindset</h3><p>Understand how AI demos become reliable products and where AIOps, MLOps, DevOps and LLMOps fit.</p><div class="tags"><span>AIOps</span><span>MLOps</span><span>LLMOps</span></div></div>
-          <div class="module"><div class="num">Week 02</div><h3>GitHub, Linux & Cloud Foundations</h3><p>Set up the engineering base: repositories, branches, Linux commands, cloud concepts, API keys and environments.</p><div class="tags"><span>DevOps</span><span>GitHub</span><span>Cloud</span></div></div>
-          <div class="module"><div class="num">Week 03</div><h3>Build GenAI Applications</h3><p>Create a clean GenAI app with APIs, backend logic, simple UI flow and responsible configuration practices.</p><div class="tags"><span>GenAI</span><span>FastAPI</span><span>APIs</span></div></div>
-          <div class="module"><div class="num">Week 04</div><h3>Prompt, API & App Reliability</h3><p>Improve prompts, handle failures, validate inputs, manage responses and prepare the app for real usage.</p><div class="tags"><span>Reliability</span><span>Prompting</span><span>Testing</span></div></div>
-          <div class="module"><div class="num">Week 05</div><h3>Docker & Container Workflows</h3><p>Package AI applications with Docker so they run consistently across local, staging and cloud environments.</p><div class="tags"><span>Docker</span><span>DevOps</span><span>Deploy</span></div></div>
-          <div class="module"><div class="num">Week 06</div><h3>CI/CD for AI Systems</h3><p>Automate testing, builds and release workflows with GitHub Actions or Jenkins-style pipeline thinking.</p><div class="tags"><span>CI/CD</span><span>Automation</span><span>Release</span></div></div>
-          <div class="module"><div class="num">Week 07</div><h3>Cloud Deployment & Runtime Setup</h3><p>Deploy AI services, manage environment variables, secrets, runtime configs and production-style app settings.</p><div class="tags"><span>Cloud</span><span>Runtime</span><span>Secrets</span></div></div>
-          <div class="module"><div class="num">Week 08</div><h3>Kubernetes & Scalable Serving</h3><p>Learn the basics of pods, deployments, services, ingress, scaling and health checks for AI workloads.</p><div class="tags"><span>Kubernetes</span><span>Scaling</span><span>Serving</span></div></div>
-          <div class="module"><div class="num">Week 09</div><h3>MLOps Model Lifecycle</h3><p>Track experiments, version models, manage artifacts, model registry concepts and safe release practices.</p><div class="tags"><span>MLOps</span><span>MLflow</span><span>DVC</span></div></div>
-          <div class="module"><div class="num">Week 10</div><h3>LLMOps, RAG & Vector Databases</h3><p>Build retrieval workflows, manage context, prompts, embeddings, vector databases and response quality.</p><div class="tags"><span>LLMOps</span><span>RAG</span><span>Vector DB</span></div></div>
-          <div class="module"><div class="num">Week 11</div><h3>Agentic AI Systems Engineering</h3><p>Add agents, tools, memory, MCP concepts and A2A workflows after the deployment foundation is clear.</p><div class="tags"><span>Agents</span><span>Memory</span><span>MCP</span><span>A2A</span></div></div>
-          <div class="module"><div class="num">Week 12</div><h3>Evals, Guardrails & Human Review</h3><p>Evaluate AI outputs, add guardrails, define human review points, fallback paths and safe recovery patterns.</p><div class="tags"><span>Evals</span><span>Guardrails</span><span>Human Review</span><span>Fallbacks</span></div></div>
-          <div class="module"><div class="num">Week 13</div><h3>AIOps Observability & Incident Response</h3><p>Track logs, metrics, traces, latency, cost, system health and use AI-assisted troubleshooting for incidents.</p><div class="tags"><span>AIOps</span><span>Monitoring</span><span>Cost & Latency</span><span>Incidents</span></div></div>
-          <div class="module"><div class="num">Week 14</div><h3>Capstone: Production AI Control Center</h3><p>Combine GenAI, MLOps, LLMOps, DevOps and AIOps into one production-style system with monitoring and improvement loops.</p><div class="tags"><span>Capstone</span><span>Production</span><span>AIOps</span><span>LLMOps</span></div></div>
+          <article class="module clean-card"><div class="num">Week 01</div><h3>Production AI Mindset</h3><p>Understand how AI demos become reliable products and where AIOps, MLOps, DevOps and LLMOps fit.</p><div class="tags"><span>AIOps</span><span>MLOps</span><span>LLMOps</span></div></article>
+          <article class="module clean-card"><div class="num">Week 02</div><h3>GitHub, Linux & Cloud Foundations</h3><p>Set up the engineering base: repositories, branches, Linux commands, cloud concepts, API keys and environments.</p><div class="tags"><span>DevOps</span><span>GitHub</span><span>Cloud</span></div></article>
+          <article class="module clean-card"><div class="num">Week 03</div><h3>Build GenAI Applications</h3><p>Create a clean GenAI app with APIs, backend logic, simple UI flow and responsible configuration practices.</p><div class="tags"><span>GenAI</span><span>FastAPI</span><span>APIs</span></div></article>
+          <article class="module clean-card"><div class="num">Week 04</div><h3>Prompt, API & App Reliability</h3><p>Improve prompts, handle failures, validate inputs, manage responses and prepare the app for real usage.</p><div class="tags"><span>Reliability</span><span>Prompting</span><span>Testing</span></div></article>
+          <article class="module clean-card"><div class="num">Week 05</div><h3>Docker & Container Workflows</h3><p>Package AI applications with Docker so they run consistently across local, staging and cloud environments.</p><div class="tags"><span>Docker</span><span>DevOps</span><span>Deploy</span></div></article>
+          <article class="module clean-card"><div class="num">Week 06</div><h3>CI/CD for AI Systems</h3><p>Automate testing, builds and release workflows with GitHub Actions or Jenkins-style pipeline thinking.</p><div class="tags"><span>CI/CD</span><span>Automation</span><span>Release</span></div></article>
+          <article class="module clean-card"><div class="num">Week 07</div><h3>Cloud Deployment & Runtime Setup</h3><p>Deploy AI services, manage environment variables, secrets, runtime configs and production-style app settings.</p><div class="tags"><span>Cloud</span><span>Runtime</span><span>Secrets</span></div></article>
+          <article class="module clean-card"><div class="num">Week 08</div><h3>Kubernetes & Scalable Serving</h3><p>Learn the basics of pods, deployments, services, ingress, scaling and health checks for AI workloads.</p><div class="tags"><span>Kubernetes</span><span>Scaling</span><span>Serving</span></div></article>
+          <article class="module clean-card"><div class="num">Week 09</div><h3>MLOps Model Lifecycle</h3><p>Track experiments, version models, manage artifacts, model registry concepts and safe release practices.</p><div class="tags"><span>MLOps</span><span>MLflow</span><span>DVC</span></div></article>
+          <article class="module clean-card"><div class="num">Week 10</div><h3>LLMOps, RAG & Vector Databases</h3><p>Build retrieval workflows, manage context, prompts, embeddings, vector databases and response quality.</p><div class="tags"><span>LLMOps</span><span>RAG</span><span>Vector DB</span></div></article>
+          <article class="module clean-card"><div class="num">Week 11</div><h3>Agentic AI Systems Engineering</h3><p>Add agents, tools, memory, MCP concepts and A2A workflows after the deployment foundation is clear.</p><div class="tags"><span>Agents</span><span>Memory</span><span>MCP</span><span>A2A</span></div></article>
+          <article class="module clean-card"><div class="num">Week 12</div><h3>Evals, Guardrails & Human Review</h3><p>Evaluate AI outputs, add guardrails, define human review points, fallback paths and safe recovery patterns.</p><div class="tags"><span>Evals</span><span>Guardrails</span><span>Human Review</span><span>Fallbacks</span></div></article>
+          <article class="module clean-card"><div class="num">Week 13</div><h3>AIOps Observability & Incident Response</h3><p>Track logs, metrics, traces, latency, cost, system health and use AI-assisted troubleshooting for incidents.</p><div class="tags"><span>AIOps</span><span>Monitoring</span><span>Cost & Latency</span><span>Incidents</span></div></article>
+          <article class="module clean-card"><div class="num">Week 14</div><h3>Capstone: Production AI Control Center</h3><p>Combine GenAI, MLOps, LLMOps, DevOps and AIOps into one production-style system with monitoring and improvement loops.</p><div class="tags"><span>Capstone</span><span>Production</span><span>AIOps</span><span>LLMOps</span></div></article>
         </div>
       </div>
     </section>
 
     <section id="projects">
       <div class="wrap">
-        <div class="section-head"><h2>Portfolio milestones across the 14-week program.</h2><p>Each milestone supports the final capstone and shows practical progress from build to production operations.</p></div>
+        <div class="section-head">
+          <h2>Portfolio milestones across the 14-week program.</h2>
+          <p>Each milestone supports the final capstone and shows practical progress from build to production operations.</p>
+        </div>
+
         <div class="projects">
-          <div class="project"><div class="label">Milestone 01</div><h3>GenAI Application MVP</h3><p>Build a working AI application with APIs, configuration and GitHub workflow.</p></div>
-          <div class="project"><div class="label">Milestone 02</div><h3>Containerized AI Service</h3><p>Package the app with Docker and prepare it for repeatable deployment.</p></div>
-          <div class="project"><div class="label">Milestone 03</div><h3>MLOps Release Pipeline</h3><p>Track experiments, version artifacts and release a model through a controlled workflow.</p></div>
-          <div class="project"><div class="label">Milestone 04</div><h3>LLMOps RAG + Eval System</h3><p>Build a retrieval AI assistant with context control, evals and response checks.</p></div>
-          <div class="project"><div class="label">Capstone</div><h3>AIOps Agent Control Center</h3><p>Operate an agentic AI system with observability, guardrails, cost tracking, latency checks and fallbacks.</p></div>
+          <article class="project clean-card"><div class="label">Milestone 01</div><h3>GenAI Application MVP</h3><p>Build a working AI application with APIs, configuration and GitHub workflow.</p></article>
+          <article class="project clean-card"><div class="label">Milestone 02</div><h3>Containerized AI Service</h3><p>Package the app with Docker and prepare it for repeatable deployment.</p></article>
+          <article class="project clean-card"><div class="label">Milestone 03</div><h3>MLOps Release Pipeline</h3><p>Track experiments, version artifacts and release a model through a controlled workflow.</p></article>
+          <article class="project clean-card"><div class="label">Milestone 04</div><h3>LLMOps RAG + Eval System</h3><p>Build a retrieval AI assistant with context control, evals and response checks.</p></article>
+          <article class="project clean-card"><div class="label">Capstone</div><h3>AIOps Agent Control Center</h3><p>Operate an agentic AI system with observability, guardrails, cost tracking, latency checks and fallbacks.</p></article>
         </div>
       </div>
     </section>
 
     <section>
       <div class="wrap">
-        <div class="section-head"><h2>Tooling learners will meet in context.</h2><p>Tools are introduced when needed in the course flow, not as random isolated topics.</p></div>
+        <div class="section-head">
+          <h2>Tooling learners will meet in context.</h2>
+          <p>Tools are introduced when needed in the course flow, not as random isolated topics.</p>
+        </div>
+
         <div class="tools">
-          <span class="tool">Python</span><span class="tool">FastAPI</span><span class="tool">GitHub</span><span class="tool">GitHub Actions</span><span class="tool">Docker</span><span class="tool">Kubernetes</span><span class="tool">Terraform Basics</span><span class="tool">AWS / Cloud</span><span class="tool">MLflow</span><span class="tool">DVC</span><span class="tool">Vector Databases</span><span class="tool">LangChain / LangGraph</span><span class="tool">OpenTelemetry</span><span class="tool">Prometheus / Grafana</span><span class="tool">LLM Evals</span><span class="tool">AIOps Dashboards</span>
+          <span class="tool">Python</span>
+          <span class="tool">FastAPI</span>
+          <span class="tool">GitHub</span>
+          <span class="tool">GitHub Actions</span>
+          <span class="tool">Docker</span>
+          <span class="tool">Kubernetes</span>
+          <span class="tool">Terraform Basics</span>
+          <span class="tool">AWS / Cloud</span>
+          <span class="tool">MLflow</span>
+          <span class="tool">DVC</span>
+          <span class="tool">Vector Databases</span>
+          <span class="tool">LangChain / LangGraph</span>
+          <span class="tool">OpenTelemetry</span>
+          <span class="tool">Prometheus / Grafana</span>
+          <span class="tool">LLM Evals</span>
+          <span class="tool">AIOps Dashboards</span>
         </div>
       </div>
     </section>
 
     <section>
       <div class="wrap">
-        <div class="section-head"><h2>FAQ</h2><p>Clear positioning for learners, engineers and teams.</p></div>
+        <div class="section-head">
+          <h2>FAQ</h2>
+          <p>Clear positioning for learners, engineers and teams.</p>
+        </div>
+
         <div class="faq">
-          <details open><summary>Is this more AIOps, MLOps, DevOps or LLMOps?</summary><p>It combines all four realistically. DevOps provides the deployment foundation, MLOps manages the model lifecycle, LLMOps manages GenAI behavior and AIOps handles observability, troubleshooting and continuous improvement.</p></details>
-          <details><summary>Will the course teach every tool deeply?</summary><p>No. The course focuses on production workflows first. Tools are introduced where they fit the build, deploy, monitor and improve journey.</p></details>
-          <details><summary>What prerequisites are needed?</summary><p>Basic programming knowledge is required, preferably Python or JavaScript. Learners should also know basic Git/GitHub, understand simple APIs or web apps, and be comfortable with terminal or Linux commands. Cloud and DevOps knowledge is helpful but not mandatory.</p></details>
-          <details><summary>Where does Agentic AI fit?</summary><p>Agentic AI is introduced after the deployment base. Learners then add agents, memory, MCP, A2A, evals, guardrails, observability, cost control and fallback patterns.</p></details>
-          <details><summary>What is the final outcome?</summary><p>Learners complete a 14-week path and build a capstone production-style AI system that includes GenAI services, model lifecycle, deployment automation, agentic AI controls, monitoring, guardrails, cost visibility and operational improvement loops.</p></details>
+          <details open>
+            <summary>Is this more AIOps, MLOps, DevOps or LLMOps?</summary>
+            <p>It combines all four realistically. DevOps provides the deployment foundation, MLOps manages the model lifecycle, LLMOps manages GenAI behavior and AIOps handles observability, troubleshooting and continuous improvement.</p>
+          </details>
+
+          <details>
+            <summary>Will the course teach every tool deeply?</summary>
+            <p>No. The course focuses on production workflows first. Tools are introduced where they fit the build, deploy, monitor and improve journey.</p>
+          </details>
+
+          <details>
+            <summary>What prerequisites are needed?</summary>
+            <p>Basic programming knowledge is required, preferably Python or JavaScript. Learners should also know basic Git/GitHub, understand simple APIs or web apps, and be comfortable with terminal or Linux commands. Cloud and DevOps knowledge is helpful but not mandatory.</p>
+          </details>
+
+          <details>
+            <summary>Where does Agentic AI fit?</summary>
+            <p>Agentic AI is introduced after the deployment base. Learners then add agents, memory, MCP, A2A, evals, guardrails, observability, cost control and fallback patterns.</p>
+          </details>
+
+          <details>
+            <summary>What is the final outcome?</summary>
+            <p>Learners complete a 14-week path and build a capstone production-style AI system that includes GenAI services, model lifecycle, deployment automation, agentic AI controls, monitoring, guardrails, cost visibility and operational improvement loops.</p>
+          </details>
         </div>
       </div>
     </section>
@@ -450,8 +1663,11 @@
     <section id="enroll" class="cta">
       <div class="wrap">
         <div class="cta-box">
-          <div><h2>Become the engineer who can build and operate AI systems.</h2><p>Move beyond demo-level AI through a structured 14-week program. Learn to build, deploy, monitor, troubleshoot and improve GenAI and Agentic AI systems with AIOps, MLOps, DevOps and LLMOps practices.</p></div>
-          <a class="btn" href="#overview">Start with the overview</a>
+          <div>
+            <h2>Become the engineer who can build and operate AI systems.</h2>
+            <p>Move beyond demo-level AI through a structured 14-week program. Learn to build, deploy, monitor, troubleshoot and improve GenAI and Agentic AI systems with AIOps, MLOps, DevOps and LLMOps practices.</p>
+          </div>
+          <a class="btn dark" href="#overview">Start with the overview</a>
         </div>
       </div>
     </section>
