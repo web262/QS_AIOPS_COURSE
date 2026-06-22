@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Engineer AIOps & MLOps Track | Deploy GenAI & Agentic AI at Scale</title>
-  <meta name="description" content="A professional AI Engineer course focused on AIOps, MLOps, DevOps, LLMOps, GenAI deployment and Agentic AI systems in production." />
+  <title>14-Week AI Engineer AIOps, MLOps & LLMOps Track | Deploy GenAI & Agentic AI at Scale</title>
+  <meta name="description" content="A 14-week AI Engineer course focused on AIOps, MLOps, DevOps, LLMOps, GenAI deployment and Agentic AI systems in production." />
   <style>
     :root{
       --ink:#07142f; --muted:#5b6680; --blue:#0e5bff; --cyan:#09b6d8; --violet:#6d5cff; --orange:#ff8a00;
@@ -112,7 +112,23 @@
     .stack-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
     .stack-item{display:flex;align-items:center;gap:10px;border:1px solid #deebfc;background:#f8fbff;border-radius:16px;padding:12px 13px;color:#233a64;font-weight:850;font-size:14px}
     .stack-item .mini{width:28px;height:28px;border-radius:10px;display:grid;place-items:center;background:#fff;border:1px solid #dce8fb;color:var(--blue)}
-    .projects{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+
+    .requirements{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:stretch}
+    .req-card{background:rgba(255,255,255,.88);border:1px solid var(--line);border-radius:30px;padding:28px;box-shadow:0 18px 54px rgba(13,41,91,.07)}
+    .req-card.highlight{background:linear-gradient(135deg,#07142f,#0b2a63);color:white;border-color:rgba(255,255,255,.14);position:relative;overflow:hidden}
+    .req-card.highlight:after{content:"";position:absolute;right:-80px;top:-90px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(9,182,216,.32),transparent 66%)}
+    .req-card h3{margin:0 0 12px;font-size:24px;letter-spacing:-.03em}
+    .req-card p{margin:0;color:#5d6a82;line-height:1.65;font-weight:600}
+    .req-card.highlight p{color:#c5d7f2;position:relative;z-index:1}
+    .req-list{display:grid;gap:12px;margin-top:18px}
+    .req-item{display:flex;gap:12px;align-items:flex-start;background:#f8fbff;border:1px solid #deebfc;border-radius:18px;padding:14px 15px}
+    .req-item strong{display:block;color:#0c2550;font-size:15px;margin-bottom:3px}
+    .req-item span{color:#5d6a82;font-size:13px;line-height:1.45;font-weight:650}
+    .req-num{flex:0 0 auto;width:30px;height:30px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--violet));color:white;font-size:12px;font-weight:950}
+    .req-note{margin-top:16px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);border-radius:20px;padding:16px;position:relative;z-index:1}
+    .req-note b{display:block;margin-bottom:5px}
+
+    .projects{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
     .project{background:#fff;border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:0 18px 54px rgba(13,41,91,.07)}
     .project .label{font-size:12px;font-weight:950;color:var(--orange);letter-spacing:.1em;text-transform:uppercase}
     .project h3{margin:12px 0 10px;font-size:20px;letter-spacing:-.025em}
@@ -133,7 +149,7 @@
       .navlinks{display:none}.hero-grid,.curriculum,.agent-section{grid-template-columns:1fr}.hero-card{min-height:620px}.cards,.projects{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:repeat(2,1fr)}.section-head{display:block}.section-head p{margin-top:12px}.sticky-note{position:relative;top:0}.modules{grid-template-columns:1fr}.cta-box{display:block}.cta-box .btn{margin-top:20px}
     }
     @media (max-width: 640px){
-      .wrap{width:min(100% - 24px,1180px)}.brand{padding:8px 10px;gap:10px}.brand img.qv{height:26px}.brand .sep,.brand img.qs{display:none}.hero{padding-top:42px}.mini-stats,.cards,.projects,.faq,.stack-list{grid-template-columns:1fr}.hero-card{min-height:780px}.system-board{inset:0;transform:none}.pipeline{grid-template-columns:repeat(2,1fr)}.screen{grid-template-columns:1fr}.agent-layer,.floating-card{position:relative;width:auto;left:auto;right:auto;bottom:auto;margin-top:14px}.dark-band{padding:28px;border-radius:30px}.flow{grid-template-columns:1fr}.cta-box{padding:28px;border-radius:28px}h1{font-size:38px}
+      .wrap{width:min(100% - 24px,1180px)}.brand{padding:8px 10px;gap:10px}.brand img.qv{height:26px}.brand .sep,.brand img.qs{display:none}.hero{padding-top:42px}.mini-stats,.cards,.projects,.faq,.stack-list,.requirements{grid-template-columns:1fr}.hero-card{min-height:780px}.system-board{inset:0;transform:none}.pipeline{grid-template-columns:repeat(2,1fr)}.screen{grid-template-columns:1fr}.agent-layer,.floating-card{position:relative;width:auto;left:auto;right:auto;bottom:auto;margin-top:14px}.dark-band{padding:28px;border-radius:30px}.flow{grid-template-columns:1fr}.cta-box{padding:28px;border-radius:28px}h1{font-size:38px}
     }
   </style>
 </head>
@@ -158,9 +174,9 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <div class="eyebrow"><span class="dot"></span>Production AI Course Track</div>
-          <h1>AI Engineer <span class="accent">AIOps & MLOps Track</span></h1>
-          <p class="hero-sub">Deploy GenAI and Agentic AI at scale with the production skills behind modern AI systems: <b>AIOps, MLOps, DevOps, LLMOps, observability, automation, reliability and continuous improvement.</b></p>
+          <div class="eyebrow"><span class="dot"></span>14-Week Production AI Course Track</div>
+          <h1>AI Engineer <span class="accent">AIOps, MLOps & LLMOps Track</span></h1>
+          <p class="hero-sub">A 14-week professional program to build, deploy and operate GenAI and Agentic AI systems at scale with <b>AIOps, MLOps, DevOps, LLMOps, observability, automation, reliability and continuous improvement.</b></p>
           <div class="pillbar">
             <span class="pill"><strong>AIOps</strong> Observability</span><span class="pill"><strong>MLOps</strong> Model Lifecycle</span><span class="pill"><strong>LLMOps</strong> Evaluation & Guardrails</span><span class="pill"><strong>DevOps</strong> CI/CD & Cloud</span><span class="pill"><strong>Agentic AI</strong> Agents + Tools</span>
           </div>
@@ -169,9 +185,9 @@
             <a class="btn" href="#projects">See Portfolio Projects</a>
           </div>
           <div class="mini-stats">
-            <div class="stat"><b>12</b><span>production-focused modules</span></div>
-            <div class="stat"><b>4+</b><span>portfolio-grade projects</span></div>
-            <div class="stat"><b>1</b><span>end-to-end AI operations capstone</span></div>
+            <div class="stat"><b>14</b><span>weeks of structured production training</span></div>
+            <div class="stat"><b>5</b><span>portfolio-grade build milestones</span></div>
+            <div class="stat"><b>1</b><span>end-to-end AIOps capstone</span></div>
           </div>
         </div>
 
@@ -204,8 +220,8 @@
     <section id="overview">
       <div class="wrap">
         <div class="section-head">
-          <h2>One course for the real production layer around AI.</h2>
-          <p>Not only model training. Not only prompting. This track connects GenAI development with DevOps, MLOps, LLMOps and AIOps so learners understand how AI systems are shipped and operated professionally.</p>
+          <h2>A complete 14-week path for the production layer around AI.</h2>
+          <p>Not only model training. Not only prompting. This 14-week track connects GenAI development with DevOps, MLOps, LLMOps and AIOps so learners understand how AI systems are shipped, observed and improved professionally.</p>
         </div>
         <div class="cards">
           <div class="card"><div class="iconbox"><svg class="svgicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h5"/></svg></div><h3>Build AI Services</h3><p>Create GenAI APIs, model services and agentic application backends with clean project structure.</p></div>
@@ -216,7 +232,41 @@
       </div>
     </section>
 
-    <section id="flow">
+    
+    <section id="prerequisites">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Prerequisites for the 14-week program.</h2>
+          <p>This course is designed to build the production AI workflow step by step. You do not need to be a DevOps expert before joining, but you should be comfortable with basic software development concepts.</p>
+        </div>
+        <div class="requirements">
+          <div class="req-card">
+            <h3>Recommended starting knowledge</h3>
+            <p>Learners should be ready to write, run, modify and debug simple applications before moving into AIOps, MLOps, DevOps and LLMOps workflows.</p>
+            <div class="req-list">
+              <div class="req-item"><div class="req-num">01</div><div><strong>Basic programming knowledge</strong><span>Preferably Python or JavaScript, including functions, packages, simple scripts and application logic.</span></div></div>
+              <div class="req-item"><div class="req-num">02</div><div><strong>Basic Git and GitHub</strong><span>Comfort with repositories, commits, branches and pushing code to GitHub.</span></div></div>
+              <div class="req-item"><div class="req-num">03</div><div><strong>Basic API or web app understanding</strong><span>Familiarity with how a simple frontend, backend, API request or web service works.</span></div></div>
+              <div class="req-item"><div class="req-num">04</div><div><strong>Terminal and Linux command comfort</strong><span>Ability to use common commands for navigation, running scripts, checking files and reading simple logs.</span></div></div>
+            </div>
+          </div>
+          <div class="req-card highlight">
+            <h3>Cloud and DevOps experience is helpful, not mandatory</h3>
+            <p>Prior exposure to cloud platforms, Docker, CI/CD, Kubernetes or monitoring tools will help, but it is not required. The course introduces these concepts progressively through realistic production AI use cases.</p>
+            <div class="req-note">
+              <b>How the course supports learners</b>
+              <span>The 14-week flow starts with AI application foundations, then gradually adds GitHub, Linux, APIs, containers, CI/CD, cloud deployment, Kubernetes, MLOps, LLMOps, agentic AI controls and AIOps observability.</span>
+            </div>
+            <div class="req-note">
+              <b>Best fit</b>
+              <span>AI engineers, developers, data practitioners, automation builders and learners who want to move from AI demos to production-ready AI systems.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section id="flow">
       <div class="wrap">
         <div class="dark-band">
           <div class="section-head" style="position:relative;z-index:1;margin-bottom:8px">
@@ -263,35 +313,38 @@
     <section id="curriculum">
       <div class="wrap curriculum">
         <aside class="sticky-note">
-          <h3>12-module curriculum</h3>
-          <p>Shorter titles, clearer flow and stronger AIOps/MLOps/DevOps/LLMOps positioning. Each module builds toward deployable AI systems.</p>
+          <h3>14-week course program</h3>
+          <p>A realistic weekly flow from AI application foundations to production deployment, AIOps observability, MLOps lifecycle management, LLMOps controls and Agentic AI operations.</p>
           <div class="legend"><span><i></i>AIOps & Observability</span><span><i></i>MLOps Lifecycle</span><span><i></i>LLMOps & Agents</span><span><i></i>DevOps & Cloud</span></div>
         </aside>
         <div class="modules">
-          <div class="module"><div class="num">Module 01</div><h3>Production AI Mindset</h3><p>Understand the gap between AI demos and production AI products.</p><div class="tags"><span>AIOps</span><span>MLOps</span><span>LLMOps</span></div></div>
-          <div class="module"><div class="num">Module 02</div><h3>GitHub, Linux & Cloud Basics</h3><p>Foundation skills for managing, running and preparing AI applications.</p><div class="tags"><span>DevOps</span><span>GitHub</span><span>Cloud</span></div></div>
-          <div class="module"><div class="num">Module 03</div><h3>Build GenAI Services</h3><p>Create APIs and app backends that connect to LLMs and AI models.</p><div class="tags"><span>GenAI</span><span>FastAPI</span><span>APIs</span></div></div>
-          <div class="module"><div class="num">Module 04</div><h3>Docker & Container Deployment</h3><p>Package AI applications so they run consistently across environments.</p><div class="tags"><span>Docker</span><span>DevOps</span><span>Deploy</span></div></div>
-          <div class="module"><div class="num">Module 05</div><h3>CI/CD for AI Applications</h3><p>Automate testing, builds, releases and deployment workflows.</p><div class="tags"><span>CI/CD</span><span>GitHub Actions</span><span>Automation</span></div></div>
-          <div class="module"><div class="num">Module 06</div><h3>MLOps Model Lifecycle</h3><p>Track experiments, version models, manage artifacts and release safely.</p><div class="tags"><span>MLOps</span><span>MLflow</span><span>DVC</span></div></div>
-          <div class="module"><div class="num">Module 07</div><h3>Model Serving & APIs</h3><p>Serve ML/GenAI models with reliable endpoints, runtime configs and tests.</p><div class="tags"><span>Serving</span><span>Latency</span><span>Reliability</span></div></div>
-          <div class="module"><div class="num">Module 08</div><h3>LLMOps, RAG & Vector Databases</h3><p>Build retrieval workflows and manage prompts, context and responses.</p><div class="tags"><span>LLMOps</span><span>RAG</span><span>Vector DB</span></div></div>
-          <div class="module"><div class="num">Module 09</div><h3>Agentic Systems Engineering</h3><p>Add agents, memory, MCP, A2A workflows and tool-using intelligence.</p><div class="tags"><span>Agents</span><span>MCP</span><span>A2A</span></div></div>
-          <div class="module"><div class="num">Module 10</div><h3>Evals, Guardrails & Fallbacks</h3><p>Evaluate outputs, control risk, add human review and safe recovery paths.</p><div class="tags"><span>Evals</span><span>Guardrails</span><span>Human Review</span></div></div>
-          <div class="module"><div class="num">Module 11</div><h3>AIOps Observability</h3><p>Track logs, metrics, traces, incidents, cost, latency and system health.</p><div class="tags"><span>AIOps</span><span>Monitoring</span><span>Cost</span></div></div>
-          <div class="module"><div class="num">Module 12</div><h3>Scale, Security & Capstone</h3><p>Deploy a production-style AI system with scalable and secure operations.</p><div class="tags"><span>Kubernetes</span><span>Security</span><span>Capstone</span></div></div>
+          <div class="module"><div class="num">Week 01</div><h3>Production AI Mindset</h3><p>Understand how AI demos become reliable products and where AIOps, MLOps, DevOps and LLMOps fit.</p><div class="tags"><span>AIOps</span><span>MLOps</span><span>LLMOps</span></div></div>
+          <div class="module"><div class="num">Week 02</div><h3>GitHub, Linux & Cloud Foundations</h3><p>Set up the engineering base: repositories, branches, Linux commands, cloud concepts, API keys and environments.</p><div class="tags"><span>DevOps</span><span>GitHub</span><span>Cloud</span></div></div>
+          <div class="module"><div class="num">Week 03</div><h3>Build GenAI Applications</h3><p>Create a clean GenAI app with APIs, backend logic, simple UI flow and responsible configuration practices.</p><div class="tags"><span>GenAI</span><span>FastAPI</span><span>APIs</span></div></div>
+          <div class="module"><div class="num">Week 04</div><h3>Prompt, API & App Reliability</h3><p>Improve prompts, handle failures, validate inputs, manage responses and prepare the app for real usage.</p><div class="tags"><span>Reliability</span><span>Prompting</span><span>Testing</span></div></div>
+          <div class="module"><div class="num">Week 05</div><h3>Docker & Container Workflows</h3><p>Package AI applications with Docker so they run consistently across local, staging and cloud environments.</p><div class="tags"><span>Docker</span><span>DevOps</span><span>Deploy</span></div></div>
+          <div class="module"><div class="num">Week 06</div><h3>CI/CD for AI Systems</h3><p>Automate testing, builds and release workflows with GitHub Actions or Jenkins-style pipeline thinking.</p><div class="tags"><span>CI/CD</span><span>Automation</span><span>Release</span></div></div>
+          <div class="module"><div class="num">Week 07</div><h3>Cloud Deployment & Runtime Setup</h3><p>Deploy AI services, manage environment variables, secrets, runtime configs and production-style app settings.</p><div class="tags"><span>Cloud</span><span>Runtime</span><span>Secrets</span></div></div>
+          <div class="module"><div class="num">Week 08</div><h3>Kubernetes & Scalable Serving</h3><p>Learn the basics of pods, deployments, services, ingress, scaling and health checks for AI workloads.</p><div class="tags"><span>Kubernetes</span><span>Scaling</span><span>Serving</span></div></div>
+          <div class="module"><div class="num">Week 09</div><h3>MLOps Model Lifecycle</h3><p>Track experiments, version models, manage artifacts, model registry concepts and safe release practices.</p><div class="tags"><span>MLOps</span><span>MLflow</span><span>DVC</span></div></div>
+          <div class="module"><div class="num">Week 10</div><h3>LLMOps, RAG & Vector Databases</h3><p>Build retrieval workflows, manage context, prompts, embeddings, vector databases and response quality.</p><div class="tags"><span>LLMOps</span><span>RAG</span><span>Vector DB</span></div></div>
+          <div class="module"><div class="num">Week 11</div><h3>Agentic AI Systems Engineering</h3><p>Add agents, tools, memory, MCP concepts and A2A workflows after the deployment foundation is clear.</p><div class="tags"><span>Agents</span><span>Memory</span><span>MCP</span><span>A2A</span></div></div>
+          <div class="module"><div class="num">Week 12</div><h3>Evals, Guardrails & Human Review</h3><p>Evaluate AI outputs, add guardrails, define human review points, fallback paths and safe recovery patterns.</p><div class="tags"><span>Evals</span><span>Guardrails</span><span>Human Review</span><span>Fallbacks</span></div></div>
+          <div class="module"><div class="num">Week 13</div><h3>AIOps Observability & Incident Response</h3><p>Track logs, metrics, traces, latency, cost, system health and use AI-assisted troubleshooting for incidents.</p><div class="tags"><span>AIOps</span><span>Monitoring</span><span>Cost & Latency</span><span>Incidents</span></div></div>
+          <div class="module"><div class="num">Week 14</div><h3>Capstone: Production AI Control Center</h3><p>Combine GenAI, MLOps, LLMOps, DevOps and AIOps into one production-style system with monitoring and improvement loops.</p><div class="tags"><span>Capstone</span><span>Production</span><span>AIOps</span><span>LLMOps</span></div></div>
         </div>
       </div>
     </section>
 
     <section id="projects">
       <div class="wrap">
-        <div class="section-head"><h2>Portfolio projects that prove production readiness.</h2><p>Projects are designed around realistic AI engineering outcomes, not only tutorials.</p></div>
+        <div class="section-head"><h2>Portfolio milestones across the 14-week program.</h2><p>Each milestone supports the final capstone and shows practical progress from build to production operations.</p></div>
         <div class="projects">
-          <div class="project"><div class="label">Project 01</div><h3>GenAI API Service</h3><p>Build and containerize an AI service with clean API design and GitHub workflow.</p></div>
-          <div class="project"><div class="label">Project 02</div><h3>MLOps Model Release</h3><p>Version a model, track experiments and serve predictions through a deployment pipeline.</p></div>
-          <div class="project"><div class="label">Project 03</div><h3>LLMOps RAG App</h3><p>Deploy a retrieval-based AI assistant with evaluation, context control and monitoring.</p></div>
-          <div class="project"><div class="label">Capstone</div><h3>AIOps Agent Control Center</h3><p>Operate an agentic AI system with observability, guardrails, cost tracking and fallbacks.</p></div>
+          <div class="project"><div class="label">Milestone 01</div><h3>GenAI Application MVP</h3><p>Build a working AI application with APIs, configuration and GitHub workflow.</p></div>
+          <div class="project"><div class="label">Milestone 02</div><h3>Containerized AI Service</h3><p>Package the app with Docker and prepare it for repeatable deployment.</p></div>
+          <div class="project"><div class="label">Milestone 03</div><h3>MLOps Release Pipeline</h3><p>Track experiments, version artifacts and release a model through a controlled workflow.</p></div>
+          <div class="project"><div class="label">Milestone 04</div><h3>LLMOps RAG + Eval System</h3><p>Build a retrieval AI assistant with context control, evals and response checks.</p></div>
+          <div class="project"><div class="label">Capstone</div><h3>AIOps Agent Control Center</h3><p>Operate an agentic AI system with observability, guardrails, cost tracking, latency checks and fallbacks.</p></div>
         </div>
       </div>
     </section>
@@ -311,8 +364,9 @@
         <div class="faq">
           <details open><summary>Is this more AIOps, MLOps, DevOps or LLMOps?</summary><p>It combines all four realistically. DevOps provides the deployment foundation, MLOps manages the model lifecycle, LLMOps manages GenAI behavior and AIOps handles observability, troubleshooting and continuous improvement.</p></details>
           <details><summary>Will the course teach every tool deeply?</summary><p>No. The course focuses on production workflows first. Tools are introduced where they fit the build, deploy, monitor and improve journey.</p></details>
+          <details><summary>What prerequisites are needed?</summary><p>Basic programming knowledge is required, preferably Python or JavaScript. Learners should also know basic Git/GitHub, understand simple APIs or web apps, and be comfortable with terminal or Linux commands. Cloud and DevOps knowledge is helpful but not mandatory.</p></details>
           <details><summary>Where does Agentic AI fit?</summary><p>Agentic AI is introduced after the deployment base. Learners then add agents, memory, MCP, A2A, evals, guardrails, observability, cost control and fallback patterns.</p></details>
-          <details><summary>What is the final outcome?</summary><p>Learners build a capstone production-style AI system that includes model serving, deployment automation, monitoring, guardrails and operational improvement loops.</p></details>
+          <details><summary>What is the final outcome?</summary><p>Learners complete a 14-week path and build a capstone production-style AI system that includes GenAI services, model lifecycle, deployment automation, agentic AI controls, monitoring, guardrails, cost visibility and operational improvement loops.</p></details>
         </div>
       </div>
     </section>
@@ -320,7 +374,7 @@
     <section id="enroll" class="cta">
       <div class="wrap">
         <div class="cta-box">
-          <div><h2>Build AI systems that can actually run.</h2><p>Move beyond demo-level AI. Learn AIOps, MLOps, DevOps and LLMOps through the full production journey of GenAI and Agentic AI systems.</p></div>
+          <div><h2>Build AI systems that can actually run.</h2><p>Move beyond demo-level AI through a structured 14-week program. Learn AIOps, MLOps, DevOps and LLMOps through the full production journey of GenAI and Agentic AI systems.</p></div>
           <a class="btn" href="#overview">Start with the overview</a>
         </div>
       </div>
@@ -329,7 +383,7 @@
 
   <footer>
     <div class="wrap footer-row">
-      <span>© QuanVerse / QuanSkill — AI Engineer AIOps & MLOps Track</span>
+      <span>© QuanVerse / QuanSkill — 14-Week AI Engineer AIOps, MLOps & LLMOps Track</span>
       <span>AIOps · MLOps · DevOps · LLMOps · Agentic AI</span>
     </div>
   </footer>
